@@ -1,4 +1,4 @@
-# expansible
+# expansible [![Build Status](https://travis-ci.org/gildegoma/expansible.svg?branch=master)](https://travis-ci.org/gildegoma/expansible)
 
 Setup all the things on your workstation with Ansible.
 
