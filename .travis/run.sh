@@ -4,6 +4,10 @@ PLAYBOOK="playbook.yml"
 INVENTORY="inventories/macosx"
 COMMON_ARGS="--inventory-file=$INVENTORY $PLAYBOOK"
 
+# Show Software Versions
+ansible-playbook --version
+ansible-lint --version¬
+
 # Run Tests
 
 cd $TRAVIS_BUILD_DIR/ansible

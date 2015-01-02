@@ -5,6 +5,4 @@
 echo "Install Ansible and friends on Mac OS X"
 brew install ansible
 pip install ansible-lint
-ansible --version
-ansible-lint --version
 
