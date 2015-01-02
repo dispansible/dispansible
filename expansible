@@ -9,11 +9,4 @@ fi
 
 cd ansible
 
-ansible-playbook\
- --sudo --sudo-user=$USER\
- --connection=local\
- --extra-vars=os=$OS\
- --inventory-file=inventories/$OS\
- --module-path=library\
- --tags=$1\
- playbook.yml
+ansible-playbook --sudo --sudo-user=$USER --connection=local --extra-vars=os=$OS --inventory-file=inventories/$OS --module-path=library --tags=$1 playbook.yml
