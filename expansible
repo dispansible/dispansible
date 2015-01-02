@@ -14,6 +14,6 @@ ansible-playbook\
  --connection=local\
  --extra-vars=os=$OS\
  --inventory-file=inventories/$OS\
- --module-path=/usr/share/battleschool/library\
+ --module-path=library\
  --tags=$1\
  playbook.yml

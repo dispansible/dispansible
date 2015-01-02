@@ -8,6 +8,11 @@ Setup all the things on your workstation with Ansible.
 
 This project initially began as a fork of https://github.com/spencergibb/ansible-osx, but my approach rapidly diverged from [battleschool](https://github.com/spencergibb/battleschool). In this alpha/beta development phase, I don't aim at keeping this project merge-compatible with `battleschool` for the moment, but I'm open to discussion and keep that thing im mind, for sure! 
 
+## Dependencies
+
+* [Ansible](http://ansible.com)
+* The additional module `mac_pkg` is taken from Spencer Gibb's [battleschool](https://github.com/spencergibb/battleschool/blob/v0.4.0/share/library/mac_pkg)
+
 ## About the name
 
 Definition of `expansible` adjective: *That can expand or be expanded*. In other words, this tools is thought 
