@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PLAYBOOK="playbook.yml"
-INVENTORY="inventories/macosx
+INVENTORY="inventories/macosx"
 COMMON_ARGS="--inventory-file=$INVENTORY $PLAYBOOK"
 
 # Run Tests
