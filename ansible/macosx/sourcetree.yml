@@ -1,0 +1,4 @@
+---
+- name: install atlassian sourcetree
+  homebrew_cask: name=sourcetree
+

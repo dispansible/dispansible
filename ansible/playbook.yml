@@ -1,0 +1,126 @@
+- name: Build my Workstation <3 <3 <3 :-)
+  hosts:
+    - mac_box
+    - linux_box
+
+  tasks:
+
+################################################
+# First things
+################################################
+
+  - name: update homebrew formulaes and upgrade already installed software
+    homebrew: update_homebrew=yes upgrade_all=yes
+    tags: homebrew_upgrade_all
+    when: os == "macosx" and software.homebrew.upgrade_all
+
+################################################
+# Low Level Stuff
+################################################
+
+  - include: "{{ os }}/openzfs.yml"
+    tags: openzfs
+    when: software.openzfs
+
+################################################
+# Base Tools
+################################################
+
+  - include: "macosx/homebrew_extras.yml"
+    tags: homebrew_extras
+    when: os == "macosx" and software.homebrew_extras
+
+  - include: "{{ os }}/shell_tools.yml"
+    tags: shell_tools
+    when: software.shell_tools
+
+  - include: "{{ os }}/editor_tools.yml"
+    tags: editor_tools
+    when: software.editor_tools
+
+  - include: "{{ os }}/network_tools.yml"
+    tags: network_tools
+    when: software.network_tools
+
+  - include: "{{ os }}/git.yml"
+    tags: git
+    when: software.git
+    vars:
+      git:
+        user:
+          fullname: 'Gilles Cornu'
+          email:    'git@gilles.cornu.name'
+
+  - include: "{{ os }}/nodejs.yml"
+    tags: nodejs
+    when: software.nodejs
+    vars:
+      nodejs:
+        global_packages:
+          - bower
+          - grunt-cli
+          - git-travis
+          - yo
+
+  - include: "{{ os }}/sourcetree.yml"
+    tags: sourcetree
+    when: software.sourcetree
+
+################################################
+# Virtualization Tools
+################################################
+
+  - include: "{{ os }}/packer.yml"
+    tags: packer
+    when: software.packer
+
+  - include: "{{ os }}/virtualbox.yml"
+    tags: virtualbox
+    when: software.virtualbox
+    vars:
+      virtualbox:
+        version: 4.3.20
+        build:   96996
+
+  - include: "{{ os }}/vagrant.yml"
+    tags: vagrant
+    when: software.vagrant
+    vars:
+      vagrant:
+        version: 1.7.1
+
+################################################
+# IDE, Editor, ...
+################################################
+
+  - include: "{{ os }}/intellij_idea.yml"
+    tags: intellij_idea
+    when: software.intellij_idea
+
+  - include: "{{ os }}/sublimetext.yml"
+    tags: sublimetext
+    when: software.sublimetext
+
+################################################
+# Mandatory Optionals
+################################################
+
+  - include: "{{ os }}/spotify.yml"
+    tags: spotify
+    when: software.spotify
+
+################################################
+# Office Material
+################################################
+
+  - include: "{{ os }}/libreoffice.yml"
+    tags: libreoffice
+    when: software.libreoffice
+
+################################################
+# Last Things
+################################################
+
+  - include: "common/home.yml"
+    tags: home
+    when: software.home

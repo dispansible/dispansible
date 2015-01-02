@@ -1,0 +1,8 @@
+---
+- name: install stable version of node.js (with npm and completion)
+  homebrew: name=nodejs state=latest
+
+- name: install typical global/system-wide npm packages
+  npm: name={{ item }} global=yes state=latest
+  with_items: nodejs.global_packages
+

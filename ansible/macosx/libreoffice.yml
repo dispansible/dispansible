@@ -1,0 +1,5 @@
+---
+
+- name: install libreoffice
+  homebrew_cask: name=libreoffice
+

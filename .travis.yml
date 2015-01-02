@@ -1,0 +1,9 @@
+os:
+  #- osx
+  - linux
+
+language: python
+python:   2.7
+
+install: .travis/intall_$TRAVIS_OS_NAME.sh
+script: .travis/run.sh

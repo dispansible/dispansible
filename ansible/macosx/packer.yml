@@ -1,0 +1,4 @@
+---
+
+- name: install packer
+  homebrew_cask: name=packer

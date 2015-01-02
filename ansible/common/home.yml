@@ -1,0 +1,13 @@
+- name: compose user .bash_profile file
+  template: src=templates/home/dot_bash_profile.j2
+            dest={{ ansible_env.HOME }}/.bash_profile
+
+- name: compose user .vimrc file
+  template: src=templates/home/dot_vimrc.j2
+            dest={{ ansible_env.HOME }}/.vimrc
+
+- name: create user .vim subdirectories
+  file: path={{ ansible_env.HOME }}/.vim/{{ item }} state=directory recurse=yes
+  with_items:
+    - backups
+    - swaps

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+OS=linux
+
+OS_FAMILY=`uname -s`
+if [ "$OS_FAMILY" == "Darwin" ]; then
+  OS=macosx
+fi
+
+cd ansible
+ansible-playbook -K -c local -e os=$OS -i inventories/$OS --module-path=/usr/share/battleschool/library --tags=$1 playbook.yml
