@@ -25,5 +25,5 @@ echo "rubber testing stuff is pending..."
 
 echo "Run expansible"
 cd $TRAVIS_BUILD_DIR
-sudo ./expansible all
+./expansible all
 
