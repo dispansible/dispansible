@@ -20,7 +20,7 @@ Definition of `expansible` adjective: *That can expand or be expanded*. In other
 * to *expand* your easy computing **exp**erience thanks to **ansible** capabilities.
 * to be easily *expanded* by its user community (see the [Contributing Guide](https://github.com/gildegoma/expansible/blob/master/CONTRIBUTING.md)).
 
-# Setup
+## Setup
 
 * Install `ansible` (this [step should be integrated](https://github.com/gildegoma/expansible/issues/1) into `expansible` in a "near" future)
 * Clone via `git` or Download as tarball this repository (or your own fork)
@@ -28,9 +28,9 @@ Definition of `expansible` adjective: *That can expand or be expanded*. In other
 * Execute `./expansible all`
 * Enjoy a drink (while keeping an eye on your screen, since [the sudo password could be prompted](https://github.com/gildegoma/expansible/issues/2) during the setup procedure)
 
-# Usage
+## Usage
 
-## expansible tool
+### expansible tool
 
 Install everything that is enabled in `ansible/group_vars/all`:
 
@@ -44,14 +44,13 @@ Install specific software:
 ./expansible vagrant,virtualbox
 ```
 
-## rubber tool
+### rubber tool
 
 *upcoming...*
 
-# Similar Projects
+## Similar Projects
 
 * [Boxen](https://boxen.github.com/) (based on [Puppet](http://puppetlabs.com/))
 * [Kitchenplan](http://kitchenplan.github.io/kitchenplan/) (based on [Chef](https://www.chef.io/))
 * [battleschool](https://github.com/spencergibb/battleschool) (also based on Ansible and mainly focused on Mac support)
 
-# 
