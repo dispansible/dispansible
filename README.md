@@ -10,7 +10,7 @@ This project initially began as a fork of https://github.com/spencergibb/ansible
 
 ## Dependencies
 
-* [Ansible](http://ansible.com)
+* [Ansible](http://ansible.com) 1.6+
 * The additional module `mac_pkg` is taken from Spencer Gibb's [battleschool](https://github.com/spencergibb/battleschool/blob/v0.4.0/share/library/mac_pkg)
 
 ## About the name
