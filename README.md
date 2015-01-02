@@ -6,7 +6,7 @@ Setup all the things on your workstation with Ansible.
 
 ## Credits
 
-This project initially began as a fork of https://github.com/spencergibb/ansible-osx, but my approach rapidly diverged from [battleschool](https://github.com/spencergibb/battleschool). In this alpha/beta development phase, I don't aim at keeping this project merge-compatible with `battleschool` for the moment, but I'm open to discussion and keep that thing im mind, for sure! 
+This project initially began as a fork of https://github.com/spencergibb/ansible-osx, but my approach rapidly diverged from [battleschool](https://github.com/spencergibb/battleschool) design. During this alpha/beta development phase, I don't aim at keeping this project merge-compatible with `battleschool`, but I'm keeping this topic in mind, and would love to discuss it further.
 
 ## Dependencies
 
@@ -18,7 +18,15 @@ This project initially began as a fork of https://github.com/spencergibb/ansible
 Definition of `expansible` adjective: *That can expand or be expanded*. In other words, this tools is thought 
 
 * to *expand* your easy computing **exp**erience thanks to **ansible** capabilities.
-* to be easily *expanded* by its user community (see the [Contributing Guide](https://github.com/gildegoma/expansible/blob/master/CONTRIBUTING.md))
+* to be easily *expanded* by its user community (see the [Contributing Guide](https://github.com/gildegoma/expansible/blob/master/CONTRIBUTING.md)).
+
+# Setup
+
+* Install `ansible` (this step will be solved by GH-1 in a "near" future)
+* Clone via `git` or Download as tarball this repository (or your own fork)
+* Optionally update the [`ansible/group_vars/all`](https://github.com/gildegoma/expansible/blob/master/ansible/group_vars/all) file in order to select which software parts you want to install
+* Execute `./expansible all`
+* Enjoy a drink (while keeping an eye on your screen due to missing GH-2)
 
 # Usage
 
