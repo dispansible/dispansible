@@ -1,0 +1,10 @@
+#!/bin/bash
+
+template=$1
+target=$2
+
+gsed -e "s/%name%/$target/g" templates/rubber/$template.tmpl > ansible/macosx/$target.yml
+gsed -i.bak "/^software:$/a\ \ $target: yes" ansible/group_vars/all
+
+# TODO improve args handling
+# TODO append to master.yml
