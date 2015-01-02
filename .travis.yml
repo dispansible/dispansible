@@ -5,6 +5,5 @@ os:
 language: python
 python:   2.7
 
-#install: .travis/install_$TRAVIS_OS_NAME.sh
-install: .travis/install_linux.sh
+install: .travis/install_$TRAVIS_OS_NAME.sh
 script: .travis/run.sh
