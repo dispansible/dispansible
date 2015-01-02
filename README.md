@@ -22,11 +22,11 @@ Definition of `expansible` adjective: *That can expand or be expanded*. In other
 
 # Setup
 
-* Install `ansible` (this step will be solved by #1 in a "near" future)
+* Install `ansible` (this [step should be integrated](https://github.com/gildegoma/expansible/issues/1) into `expansible` in a "near" future)
 * Clone via `git` or Download as tarball this repository (or your own fork)
 * Optionally update the [`ansible/group_vars/all`](https://github.com/gildegoma/expansible/blob/master/ansible/group_vars/all) file in order to select which software parts you want to install
 * Execute `./expansible all`
-* Enjoy a drink (while keeping an eye on your screen due to missing #2)
+* Enjoy a drink (while keeping an eye on your screen, since [the sudo password could be prompted](https://github.com/gildegoma/expansible/issues/2) during the setup procedure)
 
 # Usage
 
