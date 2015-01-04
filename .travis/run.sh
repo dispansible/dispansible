@@ -23,7 +23,7 @@ echo "rubber testing stuff is pending..."
 
 # Run Rubber against Travis worker
 
-echo "Run expansible"
+echo "Run dispansible"
 cd $TRAVIS_BUILD_DIR
-./expansible all
+./dispansible all
 

@@ -1,4 +1,4 @@
-# Welcome to expansible
+# Welcome to dispansible
 
 Found an error? Have an improvement idea?
 Here are some notes on how to best report them so we can get it fixed as quickly as possible.
@@ -19,7 +19,7 @@ Here are some notes on how to report your issue, so that we can respond it as fa
 
 Know how to fix something? We love pull requests! Here's a quick guide:
 
-1. [Check for open issues](https://github.com/gildegoma/expansible/issues), or open a fresh issue to start a discussion around a feature idea or a bug. Opening a separate issue to discuss the change is less important for smaller changes, as the discussion can be done in the pull request.
+1. [Check for open issues](https://github.com/gildegoma/dispansible/issues), or open a fresh issue to start a discussion around a feature idea or a bug. Opening a separate issue to discuss the change is less important for smaller changes, as the discussion can be done in the pull request.
 1. Fork this Github repository and start making your changes in a feature branch (`git checkout -b YOUR_BRANCH_NAME origin/master`).
 1. (Have a reasonable amount of tests which ensure that your changes won't be removed over time.). This step is currently "disabled" as we are still pending to decide how unit and integration tests will be implemented (e.g. based on ServerSpec, Ansible tasks, etc.)
 1. Commit your changes with [good messages](https://github.com/erlang/otp/wiki/Writing-good-commit-messages), including a reference to the related Github issue.

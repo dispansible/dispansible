@@ -1,4 +1,4 @@
-# expansible [![Build Status](https://travis-ci.org/gildegoma/expansible.svg?branch=master)](https://travis-ci.org/gildegoma/expansible)
+# dispansible [![Build Status](https://travis-ci.org/gildegoma/dispansible.svg?branch=master)](https://travis-ci.org/gildegoma/dispansible)
 
 Setup all the things on your workstation with Ansible.
 
@@ -15,7 +15,7 @@ This project initially began as a fork of https://github.com/spencergibb/ansible
 
 ## About the name
 
-**WARNING:** This project will be [renamed](https://github.com/gildegoma/expansible/issues/5) very soon. The `expansible` project will be https://github.com/rastaman/expansible.
+**WARNING:** This project is beeing [renamed](https://github.com/gildegoma/dispansible/issues/5) from `expansible` to `dispansible. The `expansible` project will be https://github.com/rastaman/expansible.
 
 Definition of `expansible` adjective: *That can expand or be expanded*. In other words, this tools is thought 
 
@@ -24,31 +24,31 @@ Definition of `expansible` adjective: *That can expand or be expanded*. In other
 
 ## Setup
 
-* Install `ansible` (this [step should be integrated](https://github.com/gildegoma/expansible/issues/1) into `expansible` in a "near" future)
+* Install `ansible` (this [step should be integrated](https://github.com/gildegoma/dispansible/issues/1) into `dispansible` tool chain in a "near" future)
 * Clone via `git` or Download as tarball this repository (or your own fork)
-* Optionally update the [`ansible/group_vars/all`](https://github.com/gildegoma/expansible/blob/master/ansible/group_vars/all) file in order to select which software parts you want to install
-* Execute `./expansible all`
-* Enjoy a drink (while keeping an eye on your screen, since [the sudo password could be prompted](https://github.com/gildegoma/expansible/issues/2) during the setup procedure)
+* Optionally update the [`ansible/group_vars/all`](https://github.com/gildegoma/dispansible/blob/master/ansible/group_vars/all) file in order to select which software parts you want to install
+* Execute `./dispansible all`
+* Enjoy a drink (while keeping an eye on your screen, since [the sudo password could be prompted](https://github.com/gildegoma/dispansible/issues/2) during the setup procedure)
 
 ## Usage
 
-### expansible tool
+### dispansible tool
 
 Install everything that is enabled in `ansible/group_vars/all`:
 
 ```bash
-./expansible all
+./dispansible all
 ```
 
 Install specific software:
 
 ```
-./expansible vagrant,virtualbox
+./dispansible vagrant,virtualbox
 ```
 
 ### rubber tool
 
-*upcoming...*
+*upcoming...* (including a possible name change)
 
 ## Similar Projects
 
