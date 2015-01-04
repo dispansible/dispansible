@@ -6,7 +6,7 @@ ASK_SUDO_PASS=''
 OS_FAMILY=`uname -s`
 if [ "$OS_FAMILY" == "Darwin" ]; then
   OS=macosx
-  ASK_SUDO_PASS='--ask-sudo-pass'
+#  ASK_SUDO_PASS='--ask-sudo-pass'
 fi
 
 cd ansible
