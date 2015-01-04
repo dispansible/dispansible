@@ -2,7 +2,8 @@
 
 # Install Dependencies
 
-echo "Install Ansible and friends on Mac OS X"
+echo "Install Ansible"
 brew install ansible
-pip install ansible-lint
 
+echo "Install ansible-lint tool"
+sudo pip install ansible-lint
