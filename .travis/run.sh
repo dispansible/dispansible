@@ -22,8 +22,11 @@ echo "ansible-playbook $COMMON_ARGS --syntax-check"
 echo "rubber testing stuff is pending..."
 
 # Run Rubber against Travis worker
+cd $TRAVIS_BUILD_DIR
+
+echo "Customize dispansible settings for Travis"
+cp .travis/ansible_vars ansible/group_vars/all
 
 echo "Run dispansible"
-cd $TRAVIS_BUILD_DIR
 ./dispansible all
 
