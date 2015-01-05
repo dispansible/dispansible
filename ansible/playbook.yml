@@ -11,11 +11,30 @@
       when: "ansible_distribution not in ['Debian', 'Linuxmint', 'MacOSX', 'Ubuntu']"
 
   roles:
+
+################################################¬
+# First Things
+################################################¬
+
     - {
         role: homebrew,
         homebrew: '{{ software.homebrew }}',
         tags: homebrew,
         when: software.homebrew
+      }
+
+################################################¬
+# Missing Things
+################################################¬
+
+ ################################################¬
+# Last Things
+################################################¬
+
+    - {
+        role: home,
+        tags: home,
+        when: software.home
       }
 
   tasks:
@@ -116,10 +135,3 @@
     tags: libreoffice
     when: software.libreoffice
 
-################################################
-# Last Things
-################################################
-
-  - include: "common/home.yml"
-    tags: home
-    when: software.home
