@@ -1,23 +1,12 @@
 ---
 
-- name: install git
-  homebrew: name=git state=latest
-
-- name: install bash completion
-  homebrew: name=bash-completion state=latest
-
 - name: ensure that git credential-osxkeychain helper is available
   command: git credential-osxkeychain
   register: git_credential_osxkeychain
   failed_when: >
     git_credential_osxkeychain.rc != 1 and ("usage: git credential-osxkeychain <get|store|erase>" not in git_credential_osxkeychain.stderr)
 
-  #FIXME: this task is not properly located (see main.yml)
 - name: set git to use the osxkeychain credential helper
   command: git config --global credential.helper osxkeychain
-  when: "git_global_settings.rc == 128 or git.force"
+  when: git_global_settings.rc == 128 or git.force
 
-- name: install more git/github goodies via homebrew
-  homebrew: name={{ item }} state=latest
-  with_items:
-    - hub
