@@ -13,6 +13,7 @@ cd ansible
 
 ansible-playbook\
  $ASK_SUDO_PASS\
+ -v\
  --sudo --sudo-user=$USER\
  --connection=local\
  --extra-vars=os=$OS\
