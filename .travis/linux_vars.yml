@@ -1,10 +1,7 @@
 software:
   editor_tools:    yes
-  git:             yes
+  git:             no
   home:            yes
-  homebrew:
-    upgrade_all:   no
-  homebrew_extras: yes
   intellij_idea:   no
   libreoffice:     no
   network_tools:   yes

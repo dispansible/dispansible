@@ -25,7 +25,7 @@ echo "rubber testing stuff is pending..."
 cd $TRAVIS_BUILD_DIR
 
 echo "Customize dispansible settings for Travis"
-cp .travis/ansible_vars ansible/group_vars/all
+cp .travis/$TRAVIS_OS_NAME_vars.yml ansible/group_vars/all
 
 echo "Run dispansible"
 ./dispansible all

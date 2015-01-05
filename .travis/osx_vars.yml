@@ -1,0 +1,20 @@
+software:
+  editor_tools:    yes
+  git:             yes
+  home:            yes
+  homebrew:
+    upgrade_all:   no
+  intellij_idea:   no
+  libreoffice:     no
+  network_tools:   yes
+  nodejs:          yes
+  openzfs:         yes
+  packer:          no
+  shell_tools:     yes
+  sourcetree:      no
+  spotify:         no
+  sublimetext:     no
+  vagrant:
+    plugins:
+      - vagrant-cachier
+  virtualbox:      yes
