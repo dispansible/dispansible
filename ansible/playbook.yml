@@ -3,20 +3,22 @@
     - mac_box
     - linux_box
 
+  pre_tasks:
+    # FIXME this check only works when no ansible tags are used!
+    #       another approach will consists in adding similar checker for each software role
+    - name: Check for unsupported platform
+      fail: msg="The operating system {{ ansible_distribution }} / {{ ansible_os_family }}) is not currently supported."
+      when: "ansible_distribution not in ['Debian', 'Linuxmint', 'MacOSX', 'Ubuntu']"
+
+  roles:
+    - {
+        role: homebrew,
+        homebrew: '{{ software.homebrew }}',
+        tags: homebrew,
+        when: software.homebrew
+      }
+
   tasks:
-
-################################################
-# First things
-################################################
-
-  - name: update homebrew formulaes and upgrade already installed software
-    homebrew: update_homebrew=yes upgrade_all=yes
-    tags: homebrew_upgrade_all
-    when: os == "macosx" and software.homebrew.upgrade_all
-
-  - include: "macosx/homebrew_extras.yml"
-    tags: homebrew_extras
-    when: os == "macosx" and software.homebrew_extras
 
 ################################################
 # Low Level Stuff
