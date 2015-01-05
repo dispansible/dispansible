@@ -14,6 +14,10 @@
     tags: homebrew_upgrade_all
     when: os == "macosx" and software.homebrew.upgrade_all
 
+  - include: "macosx/homebrew_extras.yml"
+    tags: homebrew_extras
+    when: os == "macosx" and software.homebrew_extras
+
 ################################################
 # Low Level Stuff
 ################################################
@@ -25,10 +29,6 @@
 ################################################
 # Base Tools
 ################################################
-
-  - include: "macosx/homebrew_extras.yml"
-    tags: homebrew_extras
-    when: os == "macosx" and software.homebrew_extras
 
   - include: "{{ os }}/shell_tools.yml"
     tags: shell_tools
