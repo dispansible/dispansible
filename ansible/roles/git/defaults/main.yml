@@ -1,0 +1,5 @@
+git:
+  force:      no
+  user:
+    fullname: "Change Me"
+    email:    dispansible@change.me

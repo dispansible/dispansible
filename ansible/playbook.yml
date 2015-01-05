@@ -33,6 +33,17 @@
       when: software.openzfs
     }
 
+################################################
+# Base Tools
+################################################
+
+  - {
+      role: git,
+      git: '{{ settings.git }}',
+      tags: git,
+      when: software.git
+    }
+
 ################################################¬
 # Missing Things
 ################################################¬
@@ -64,15 +75,6 @@
   - include: "{{ os }}/network_tools.yml"
     tags: network_tools
     when: software.network_tools
-
-  - include: "{{ os }}/git.yml"
-    tags: git
-    when: software.git
-    vars:
-      git:
-        user:
-          fullname: 'Gilles Cornu'
-          email:    'git@gilles.cornu.name'
 
   - include: "{{ os }}/nodejs.yml"
     tags: nodejs

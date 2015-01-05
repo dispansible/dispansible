@@ -1,0 +1,28 @@
+---
+
+- name: Include tasks for MacOSX-like platforms
+  include: macosx.yml
+  when: ansible_os_family == 'Darwin'
+
+- name: Include tasks for Ubuntu-like platforms
+  include: ubuntu.yml
+  sudo_user: root
+  when: ansible_distribution in ['Ubuntu', 'Linuxmint']
+
+- name: check if git global settings are already set
+  command: git config --global --list
+  ignore_errors: yes
+  register: git_global_settings
+
+- name: setup colors in git
+  command: git config --global color.ui true
+#  when: git_global_settings.rc == 128 or git.force
+
+- name: setup git user name
+  command: git config --global user.name "{{ git.user.fullname }}"
+#  when: git_global_settings.rc == 128 or git.force
+
+- name: setup git user email
+  command: git config --global user.email "{{ git.user.email }}"
+#  when: git_global_settings.rc == 128 or git.force
+

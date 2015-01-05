@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export ANSIBLE_NOCOWS=1
+
 OS=linux
 ASK_SUDO_PASS=''
 
@@ -17,6 +19,7 @@ ansible-playbook\
  --sudo --sudo-user=$USER\
  --connection=local\
  --extra-vars=os=$OS\
+ --extra-vars='@../settings.yml'\
  --inventory-file=inventories/$OS\
  --module-path=library\
  --tags=$1\

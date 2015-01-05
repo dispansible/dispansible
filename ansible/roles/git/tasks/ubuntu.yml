@@ -1,0 +1,9 @@
+---
+
+- name: install git-core ppa repository to get latest stable version
+  apt_repository: repo=ppa:git-core/ppa base_codename='trusty' update_cache=yes
+
+- name: install git packages from git-core ppa
+  apt: pkg={{ item }} state=latest update_cache=yes
+  with_items:
+    - git-core

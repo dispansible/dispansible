@@ -6,4 +6,5 @@
 
 - name: Include tasks for PPA installation
   include: ubuntu_ppa.yml
+  sudo_user: root
   when: ansible_distribution in ['Ubuntu', 'Linuxmint']

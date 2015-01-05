@@ -1,27 +1,10 @@
-#TODO add global gitignore rules (e.g. bak,swp,..)
 ---
+
 - name: install git
   homebrew: name=git state=latest
 
 - name: install bash completion
   homebrew: name=bash-completion state=latest
-
-- name: check if git global settings are already set
-  command: git config --global --list
-  ignore_errors: yes
-  register: git_global_settings
-
-- name: setup colors in git
-  command: git config --global color.ui true
-  when: git_global_settings.rc == 128
-
-- name: setup git user name
-  command: git config --global user.name "{{ git.user.fullname }}"
-  when: git_global_settings.rc == 128
-
-- name: setup git user email
-  command: git config --global user.email "{{ git.user.email }}"
-  when: git_global_settings.rc == 128
 
 - name: ensure that git credential-osxkeychain helper is available
   command: git credential-osxkeychain
@@ -29,9 +12,10 @@
   failed_when: >
     git_credential_osxkeychain.rc != 1 and ("usage: git credential-osxkeychain <get|store|erase>" not in git_credential_osxkeychain.stderr)
 
+  #FIXME: this task is not properly located (see main.yml)
 - name: set git to use the osxkeychain credential helper
   command: git config --global credential.helper osxkeychain
-  when: git_global_settings.rc == 128
+  when: "git_global_settings.rc == 128 or git.force"
 
 - name: install more git/github goodies via homebrew
   homebrew: name={{ item }} state=latest

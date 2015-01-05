@@ -1,4 +1,10 @@
 ---
 
-# upcoming...
+- name: install zfs ppa repository
+  apt_repository: repo=ppa:zfs-native/stable base_codename='trusty' update_cache=yes
 
+- name: install zfs with linux kernel-level support
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - ubuntu-zfs
+    #- zfs-auto-snapshot
