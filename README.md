@@ -15,7 +15,8 @@ This project initially began as a fork of https://github.com/spencergibb/ansible
 
 ## About the name
 
-**WARNING:** This project is beeing [renamed](https://github.com/gildegoma/dispansible/issues/5) from `expansible` to `dispansible. The `expansible` project will be https://github.com/rastaman/expansible.
+**WARNING:** This project is beeing [renamed](https://github.com/gildegoma/dispansible/issues/5) from `expansible` to `dispansible`.
+Note that the http://expansible.io project is developed at https://github.com/rastaman/expansible.
 
 Definition of `expansible` adjective: *That can expand or be expanded*. In other words, this tools is thought 
 
