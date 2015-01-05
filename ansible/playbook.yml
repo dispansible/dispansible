@@ -16,36 +16,38 @@
 # First Things
 ################################################¬
 
-    - {
-        role: homebrew,
-        homebrew: '{{ software.homebrew }}',
-        tags: homebrew,
-        when: software.homebrew
-      }
-
-################################################¬
-# Missing Things
-################################################¬
-
- ################################################¬
-# Last Things
-################################################¬
-
-    - {
-        role: home,
-        tags: home,
-        when: software.home
-      }
-
-  tasks:
+  - {
+      role: homebrew,
+      homebrew: '{{ software.homebrew }}',
+      tags: homebrew,
+      when: software.homebrew
+    }
 
 ################################################
 # Low Level Stuff
 ################################################
 
-  - include: "{{ os }}/openzfs.yml"
-    tags: openzfs
-    when: software.openzfs
+  - {
+      role: openzfs,
+      tags: openzfs,
+      when: software.openzfs
+    }
+
+################################################¬
+# Missing Things
+################################################¬
+
+################################################¬
+# Last Things
+################################################¬
+
+  - {
+      role: home,
+      tags: home,
+      when: software.home
+    }
+
+  tasks:
 
 ################################################
 # Base Tools
