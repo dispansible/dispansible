@@ -5,10 +5,10 @@
 - name: install vagrant bash completion
   homebrew: name=vagrant-completion
 
-- name: install vagrant plugins
-  command: vagrant plugin install {{ item }}
-  with_items: software.vagrant.plugins
-
 - name: update vagrant plugins
   command: vagrant plugin update
   when: software.vagrant.plugins
+
+- name: install vagrant plugins
+  command: vagrant plugin install {{ item }}
+  with_items: software.vagrant.plugins

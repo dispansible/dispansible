@@ -85,9 +85,6 @@
   - include: "{{ os }}/vagrant.yml"
     tags: vagrant
     when: software.vagrant
-    vars:
-      vagrant:
-        version: 1.7.1
 
 ################################################
 # IDE, Editor, ...
