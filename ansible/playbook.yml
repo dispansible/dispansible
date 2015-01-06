@@ -20,7 +20,7 @@
       role: homebrew,
       homebrew: '{{ software.homebrew }}',
       tags: homebrew,
-      when: software.homebrew
+      when: software.homebrew is defined and software.homebrew
     }
 
 ################################################
