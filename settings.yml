@@ -2,7 +2,7 @@
 
 settings:
   git:
-    force:       yes
+    force:      no
     user:
       fullname: 'Gilles Cornu'
       email:    'git@gilles.cornu.name'
