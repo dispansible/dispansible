@@ -5,7 +5,7 @@ software:
   homebrew:
     upgrade_all:   no
     packages:
-      - a2ps
+      - gpg
     casks:
       - lighttable
   network_tools:   yes
