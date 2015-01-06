@@ -1,5 +1,5 @@
 ---
 
-- name: Include tasks for MacOSX platform
-  include: macosx.yml
+- name: Install homebrew only on MacOSX platform
+  include: homebrew.yml
   when: ansible_distribution == 'MacOSX'

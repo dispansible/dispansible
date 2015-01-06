@@ -2,8 +2,18 @@ software:
   editor_tools:    yes
   git:             yes
   home:            yes
+
   homebrew:
     upgrade_all:   no
+
+#    see available packages at http://braumeister.org
+#    packages:
+#      - cowsay
+#    see available casks at http://caskroom.io
+#    casks:
+#      - firefox
+#      - google-chrome
+
   intellij_idea:   yes
   libreoffice:     yes
   network_tools:   yes

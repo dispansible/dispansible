@@ -4,6 +4,10 @@ software:
   home:            yes
   homebrew:
     upgrade_all:   no
+    packages:
+      - a2ps
+    casks:
+      - lighttable
   intellij_idea:   no
   libreoffice:     no
   network_tools:   yes

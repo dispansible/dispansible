@@ -20,3 +20,11 @@
   homebrew: update_homebrew=yes upgrade_all=yes
   tags: homebrew_upgrade_all
   when: homebrew.upgrade_all
+
+- name: install more homebrew packages
+  homebrew: name={{ item }}
+  with_items: "{{ homebrew.packages|default([]) }}"
+
+- name: install more homebrew casks
+  homebrew_cask: name={{ item }}
+  with_items: "{{ homebrew.casks|default([]) }}"

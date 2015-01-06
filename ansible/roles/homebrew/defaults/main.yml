@@ -2,3 +2,9 @@
 
 homebrew:
   upgrade_all:  no
+#  packages:
+#    - cowsay
+#    - ...
+#  casks:
+#    - firefox
+#    - ...
