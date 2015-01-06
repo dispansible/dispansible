@@ -13,14 +13,26 @@ software:
 
 #   see available casks at http://caskroom.io
     casks:
+      # Web Tools:
       - firefox
       - google-chrome
+
+      # Office Tools:
       - libreoffice
+
+      # Developer Tools:
       - sourcetree
       - intellij-idea
       - lighttable
       - sublime-text
+
+      # Programming Languages
+      - java
+
+      # DevOps Tools:
       - packer
+
+      # Higher Productivity Tools:
       - spotify
 
   network_tools:   yes
