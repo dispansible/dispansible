@@ -5,6 +5,12 @@ software:
   network_tools:   yes
   nodejs:          yes
   openzfs:         no
+  rvm:
+    rubies:
+      - ruby-1.9.3
+      - ruby
+      - rbx
+      - jruby
   shell_tools:     yes
   vagrant:
     plugins:
