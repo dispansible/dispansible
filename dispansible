@@ -4,6 +4,11 @@ export ANSIBLE_NOCOWS=1
 
 OS=linux
 ASK_SUDO_PASS=''
+TAGS=$1
+
+if [ "$TAGS" == "" ]; then
+  TAGS=all
+fi
 
 OS_FAMILY=`uname -s`
 if [ "$OS_FAMILY" == "Darwin" ]; then
@@ -22,5 +27,5 @@ ansible-playbook\
  --extra-vars='@../settings.yml'\
  --inventory-file=inventories/$OS\
  --module-path=library\
- --tags=$1\
+ --tags=$TAGS\
  playbook.yml
