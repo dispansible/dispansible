@@ -5,6 +5,8 @@ export ANSIBLE_NOCOWS=1
 OS=linux
 ASK_SUDO_PASS=''
 TAGS=$1
+GALAXY=yes
+GALAXY_FORCE="--force" # or disable with ""
 
 if [ "$TAGS" == "" ]; then
   TAGS=all
@@ -17,6 +19,12 @@ if [ "$OS_FAMILY" == "Darwin" ]; then
 fi
 
 cd ansible
+
+if [ "$GALAXY" == "yes" ]; then
+  export ANSIBLE_ROLES_PATH=`pwd`/galaxy
+
+  ansible-galaxy install $GALAXY_FORCE --roles-path $ANSIBLE_ROLES_PATH --role-file galaxy.yml
+fi
 
 ansible-playbook\
  $ASK_SUDO_PASS\

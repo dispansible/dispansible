@@ -7,8 +7,10 @@ software:
     upgrade_all:   no
 
 #   see available packages at http://braumeister.org
-#    packages:
-#      - cowsay
+    packages:
+      - gpg
+      - subversion
+
 #   see available casks at http://caskroom.io
     casks:
       - firefox
@@ -24,6 +26,16 @@ software:
   network_tools:   yes
   nodejs:          yes
   openzfs:         no
+
+  rvm:
+    rubies:
+      - ruby-1.9.3
+      - ruby-2.0.0
+      - ruby-2.1
+      - ruby-2.2
+      - rbx
+      - jruby
+
   shell_tools:     yes
   vagrant:
     plugins:

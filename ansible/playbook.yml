@@ -44,6 +44,23 @@
       when: software.git
     }
 
+################################################
+# Programming Language Tools
+################################################
+
+
+  # By default this role makes a system-wide setup,
+  # but here we want a user setup.
+  - {
+      role: 'rvm_io.rvm1-ruby',
+      rvm1_user: '{{ ansible_env.USER }}',
+      rvm1_install_path: '{{ ansible_env.HOME }}/.rvm',
+      rvm1_install_flags: '--auto-dotfiles --autolibs=homebrew --user-install',
+      rvm1_rubies: '{{ software.rvm.rubies }}',
+      tags: rvm,
+      when: software.rvm is defined and software.rvm
+    }
+
 ################################################¬
 # Virtualization Tools
 ################################################¬
