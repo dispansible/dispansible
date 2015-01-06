@@ -87,17 +87,9 @@
           - git-travis
           - yo
 
-  - include: "{{ os }}/sourcetree.yml"
-    tags: sourcetree
-    when: software.sourcetree
-
 ################################################
 # Virtualization Tools
 ################################################
-
-  - include: "{{ os }}/packer.yml"
-    tags: packer
-    when: software.packer
 
   - include: "{{ os }}/virtualbox.yml"
     tags: virtualbox
@@ -110,32 +102,4 @@
   - include: "{{ os }}/vagrant.yml"
     tags: vagrant
     when: software.vagrant
-
-################################################
-# IDE, Editor, ...
-################################################
-
-  - include: "{{ os }}/intellij_idea.yml"
-    tags: intellij_idea
-    when: software.intellij_idea
-
-  - include: "{{ os }}/sublimetext.yml"
-    tags: sublimetext
-    when: software.sublimetext
-
-################################################
-# Mandatory Optionals
-################################################
-
-  - include: "{{ os }}/spotify.yml"
-    tags: spotify
-    when: software.spotify
-
-################################################
-# Office Material
-################################################
-
-  - include: "{{ os }}/libreoffice.yml"
-    tags: libreoffice
-    when: software.libreoffice
 

@@ -6,24 +6,25 @@ software:
   homebrew:
     upgrade_all:   no
 
-#    see available packages at http://braumeister.org
+#   see available packages at http://braumeister.org
 #    packages:
 #      - cowsay
-#    see available casks at http://caskroom.io
-#    casks:
-#      - firefox
-#      - google-chrome
+#   see available casks at http://caskroom.io
+    casks:
+      - firefox
+      - google-chrome
+      - libreoffice
+      - sourcetree
+      - intellij-idea
+      - lighttable
+      - sublime-text
+      - packer
+      - spotify
 
-  intellij_idea:   yes
-  libreoffice:     yes
   network_tools:   yes
   nodejs:          yes
   openzfs:         no
-  packer:          yes
   shell_tools:     yes
-  sourcetree:      yes
-  spotify:         yes
-  sublimetext:     yes
   vagrant:
     plugins:
       - vagrant-cachier
