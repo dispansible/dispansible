@@ -18,7 +18,9 @@
   command: vagrant plugin update
   when: vagrant.plugins
 
-# TODO add idempotence check (needs version wildcard)
+# Currently requires an embedded version of `command` module, see:
+#   - https://github.com/ansible/ansible/issues/1904
+#   - https://github.com/ansible/ansible-modules-core/pull/513
 - name: install vagrant plugins
-  command: vagrant plugin install {{ item }}
+  command: vagrant plugin install {{ item }} creates={{ ansible_env.HOME }}/.vagrant.d/gems/gems/{{ item }}*
   with_items: vagrant.plugins
