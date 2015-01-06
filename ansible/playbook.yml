@@ -45,6 +45,17 @@
     }
 
 ################################################¬
+# Virtualization Tools
+################################################¬
+
+  - {
+      role: vagrant,
+      vagrant: '{{ software.vagrant }}',
+      tags: vagrant,
+      when: software.vagrant is defined and software.vagrant
+    }
+#
+################################################¬
 # Missing Things
 ################################################¬
 
@@ -98,8 +109,4 @@
       virtualbox:
         version: 4.3.20
         build:   96996
-
-  - include: "{{ os }}/vagrant.yml"
-    tags: vagrant
-    when: software.vagrant
 

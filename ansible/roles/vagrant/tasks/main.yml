@@ -1,0 +1,24 @@
+---
+
+- name: Include tasks for Homebrew Cask installation
+  include: homebrew_cask.yml
+  when: ansible_distribution == 'MacOSX'
+
+# - name: Include tasks for DEB installation
+#   include: debian.yml
+#   sudo_user: root
+#   when: ansible_os_family == 'Debian'
+
+# - name: Include tasks for RPM installation¬
+#   include: redhat.yml¬
+#   sudo_user: root¬
+#   when: ansible_os_family == 'RedHat'¬
+
+- name: update vagrant plugins
+  command: vagrant plugin update
+  when: vagrant.plugins
+
+# TODO add idempotence check (needs version wildcard)
+- name: install vagrant plugins
+  command: vagrant plugin install {{ item }}
+  with_items: vagrant.plugins
