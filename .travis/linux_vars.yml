@@ -1,12 +1,12 @@
 software:
   editor_tools:    yes
-  git:             no
+  git:             yes
   home:            yes
   intellij_idea:   no
   libreoffice:     no
   network_tools:   yes
   nodejs:          yes
-  openzfs:         yes
+  openzfs:         no
   packer:          no
   shell_tools:     yes
   sourcetree:      no
