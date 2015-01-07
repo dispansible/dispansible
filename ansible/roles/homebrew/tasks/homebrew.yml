@@ -18,7 +18,6 @@
 
 - name: update homebrew formulaes and upgrade already installed software
   homebrew: update_homebrew=yes upgrade_all=yes
-  tags: homebrew_upgrade_all
   when: homebrew.upgrade_all
 
 - name: install more homebrew packages
