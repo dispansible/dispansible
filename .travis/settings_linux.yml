@@ -1,6 +1,7 @@
 ---
 
-skipped_roles: []
+skipped_roles:
+  - openzfs    # disabled until we fix the held broken packages on apt-get install.
 
 git:
   force:       yes
