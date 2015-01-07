@@ -19,6 +19,13 @@ homebrew:
   packages:
     # Base Tools:
     - gpg
+    - gnu-sed
+    - vim
+
+    # Network Tools
+    - curl
+    - nmap
+    - wget
 
     # Developer Tools:
     - liquibase
