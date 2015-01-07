@@ -10,7 +10,7 @@ git:
     email:     'gruffalo@travis-ci.org'
 
 homebrew:
-  upgrade_all: yes
+  upgrade_all: no
 
   packages:
     - gpg
