@@ -1,3 +1,11 @@
 ---
 
-# TODO
+- name: download vagrant .deb package
+  get_url: url={{ vagrant.download_base_url }}/vagrant_{{ vagrant.version }}_{{ ansible_machine }}.deb
+           dest=/tmp/vagrant_{{ vagrant.version }}_{{ ansible_machine }}.deb
+
+- name: install vagrant .deb package
+  apt: deb=/tmp/vagrant_{{ vagrant.version }}_{{ ansible_machine }}.deb
+  sudo: yes
+  sudo_user: root
+

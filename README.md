@@ -33,9 +33,8 @@ Definition of `expansible` adjective: *That can expand or be expanded*. In other
 * Install `ansible` (this [step should be integrated](https://github.com/gildegoma/dispansible/issues/1) into `dispansible` tool chain in a "near" future)
 * Clone via `git` or Download as tarball this repository (or your own fork)
 * Optionally update the following configuration files:
-  * [`ansible/group_vars/all`](https://github.com/gildegoma/dispansible/blob/master/ansible/group_vars/all) to select which software parts you want to install
   * [`ansible/galaxy.yml`](https://github.com/gildegoma/dispansible/blob/master/ansible/galaxy.yml) to change the external roles that you are depending on.
-  * [`settings.yml`](https://github.com/gildegoma/dispansible/blob/master/settings.yml)
+  * [`settings.yml`](https://github.com/gildegoma/dispansible/blob/master/settings.yml) to customize your software configuration and optionally unselect applications (using the `skipped_roles` list)
 * Execute `./dispansible all`
 * Enjoy a drink (while keeping an eye on your screen, since [the sudo password could be prompted](https://github.com/gildegoma/dispansible/issues/2) during the setup procedure)
 

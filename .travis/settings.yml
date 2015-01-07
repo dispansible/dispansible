@@ -1,8 +1,0 @@
----
-
-settings:
-  git:
-    force:       yes
-    user:
-      fullname: 'Gruffalo Bill'
-      email:    'gruffalo@travis-ci.org'

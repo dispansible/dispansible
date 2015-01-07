@@ -1,0 +1,16 @@
+---
+
+skipped_roles: []
+
+git:
+  force:       yes
+  user:
+    fullname:  'Gruffalo Bill'
+    email:     'gruffalo@travis-ci.org'
+
+rvm:
+  rubies:
+    - ruby-1.9.3
+    - ruby
+    - rbx
+    - jruby

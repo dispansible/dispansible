@@ -18,9 +18,8 @@
 
   - {
       role: homebrew,
-      homebrew: '{{ software.homebrew }}',
       tags: homebrew,
-      when: software.homebrew is defined and software.homebrew
+      when: "'homebrew' not in skipped_roles"
     }
 
 ################################################
@@ -30,7 +29,7 @@
   - {
       role: openzfs,
       tags: openzfs,
-      when: software.openzfs
+      when: "'openzfs' not in skipped_roles"
     }
 
 ################################################
@@ -39,9 +38,8 @@
 
   - {
       role: git,
-      git: '{{ settings.git }}',
       tags: git,
-      when: software.git
+      when: "'git' not in skipped_roles"
     }
 
 ################################################
@@ -56,9 +54,9 @@
       rvm1_user: '{{ ansible_env.USER }}',
       rvm1_install_path: '{{ ansible_env.HOME }}/.rvm',
       rvm1_install_flags: '--auto-dotfiles --autolibs=homebrew --user-install',
-      rvm1_rubies: '{{ software.rvm.rubies }}',
+      rvm1_rubies: '{{ rvm.rubies }}',
       tags: rvm,
-      when: software.rvm is defined and software.rvm
+      when: "'rvm' not in skipped_roles"
     }
 
 ################################################¬
@@ -67,11 +65,10 @@
 
   - {
       role: vagrant,
-      vagrant: '{{ software.vagrant }}',
       tags: vagrant,
-      when: software.vagrant is defined and software.vagrant
+      when: "'vagrant' not in skipped_roles"
     }
-#
+
 ################################################¬
 # Missing Things
 ################################################¬
@@ -83,7 +80,7 @@
   - {
       role: home,
       tags: home,
-      when: software.home
+      when: "'home' not in skipped_roles"
     }
 
   tasks:
@@ -94,19 +91,19 @@
 
   - include: "{{ os }}/shell_tools.yml"
     tags: shell_tools
-    when: software.shell_tools
+    when: "'shell_tools' not in skipped_roles"
 
   - include: "{{ os }}/editor_tools.yml"
     tags: editor_tools
-    when: software.editor_tools
+    when: "'editor_tools' not in skipped_roles"
 
   - include: "{{ os }}/network_tools.yml"
     tags: network_tools
-    when: software.network_tools
+    when: "'network_tools' not in skipped_roles"
 
   - include: "{{ os }}/nodejs.yml"
     tags: nodejs
-    when: software.nodejs
+    when: "'nodejs' not in skipped_roles"
     vars:
       nodejs:
         global_packages:
@@ -121,7 +118,7 @@
 
   - include: "{{ os }}/virtualbox.yml"
     tags: virtualbox
-    when: software.virtualbox
+    when: "'virtualbox' not in skipped_roles"
     vars:
       virtualbox:
         version: 4.3.20

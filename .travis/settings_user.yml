@@ -1,0 +1,7 @@
+---
+
+# TODO: Will be reintroduced when settings.yml will be splitted between "software selection" and "software personalization"
+git:
+  user:
+    fullname: 'Gruffalo Bill'
+    email:    'gruffalo@travis-ci.org'

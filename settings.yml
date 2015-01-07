@@ -1,8 +1,66 @@
 ---
 
-settings:
-  git:
-    force:      no
-    user:
-      fullname: 'Gilles Cornu'
-      email:    'git@gilles.cornu.name'
+# FIXME: split between "personal/private" settings and "software selection"
+
+skipped_roles: []
+# Put the role names of the software you don't want to install in the 'skipped_roles' list 
+#  - dummy (and don't forget to remove the empty list above ([])).
+
+git:
+  force:      no
+  user:
+    fullname: 'Gilles Cornu'
+    email:    'git@gilles.cornu.name'
+
+homebrew:
+  upgrade_all:   no
+
+  # see available packages at http://braumeister.org
+  packages:
+    # Base Tools:
+    - gpg
+
+    # Developer Tools:
+    - liquibase
+    - llvm
+    - maven
+    - subversion
+
+  # see available casks at http://caskroom.io
+  casks:
+    # Web Tools:
+    - firefox
+    - google-chrome
+
+    # Office Tools:
+    - libreoffice
+
+    # Developer Tools:
+    - sourcetree
+    - intellij-idea
+    - lighttable
+    - sublime-text
+    - java
+
+    # DevOps Tools:
+    - packer
+
+    # Higher Productivity Tools:
+    - spotify
+
+rvm:
+  rubies:
+    - ruby-1.9.3
+    - ruby-2.0.0
+    - ruby-2.1
+    - ruby-2.2
+    # - rbx (disabled until missing llvm-config is solved)
+    - jruby
+
+vagrant:
+  version: 1.7.1
+  plugins:
+    - vagrant-cachier
+    - vagrant-digitalocean
+    - vagrant-hostmanager
+    - vagrant-vbguest

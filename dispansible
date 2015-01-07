@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export ANSIBLE_NOCOWS=1
+export ANSIBLE_HASH_BEHAVIOUR=merge
 
 OS=linux
 ASK_SUDO_PASS=''
@@ -20,9 +21,9 @@ fi
 
 cd ansible
 
+export ANSIBLE_ROLES_PATH=`pwd`/galaxy
 if [ "$GALAXY" == "yes" ]; then
-  export ANSIBLE_ROLES_PATH=`pwd`/galaxy
-
+  rm -rf $ANSIBLE_ROLES_PATH
   ansible-galaxy install $GALAXY_FORCE --roles-path $ANSIBLE_ROLES_PATH --role-file galaxy.yml
 fi
 
