@@ -11,3 +11,7 @@ install:
 script:
   - .travis/run.sh
   - .travis/check.sh
+
+env:
+  global:
+    - GALAXY=yes
