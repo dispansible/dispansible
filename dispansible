@@ -6,7 +6,7 @@ TAGS=$1
 ANSIBLE_HOME=$PWD/ansible
 
 if [ -z "$GALAXY" ]; then
-  GALAXY=no
+  GALAXY=yes
 fi
 GALAXY_ROLES_PATH=$ANSIBLE_HOME/galaxy
 GALAXY_FILE=$ANSIBLE_HOME/galaxy.yml
