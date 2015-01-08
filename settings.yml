@@ -18,6 +18,8 @@ homebrew:
   # see available packages at http://braumeister.org
   packages:
     # Base Tools:
+    - bash
+    - coreutils
     - gpg
     - gnu-sed
     - vim
