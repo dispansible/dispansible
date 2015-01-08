@@ -12,7 +12,7 @@ ansible-lint --version¬
 
 cd $TRAVIS_BUILD_DIR/ansible
 
-echo "Run ansible-lint"
+echo "Run ansible-lint (allowing failures for now)"
 ansible-lint $PLAYBOOK
 
 echo "Run ansible syntax checks"
