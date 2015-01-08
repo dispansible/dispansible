@@ -2,6 +2,7 @@
 
 skipped_roles: 
   - virtualbox
+  - rvm
 
 git:
   force:       yes
