@@ -1,0 +1,16 @@
+---
+
+- name: Include tasks for MacOSX installation
+  include: macosx.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Include tasks for DEB installation
+  include: debian.yml
+  sudo_user: root
+  when: ansible_os_family == 'Debian'
+
+# - name: Include tasks for RPM installation¬
+#   include: redhat.yml¬
+#   sudo_user: root¬
+#   when: ansible_os_family == 'RedHat'¬
+

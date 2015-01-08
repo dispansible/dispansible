@@ -1,0 +1,26 @@
+---
+
+- name: Include tasks for MacOSX installation
+  include: homebrew.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Include tasks for DEB installation
+  include: ubuntu_ppa.yml
+  sudo_user: root
+  when: ansible_distribution in ['Ubuntu', 'Linuxmint']
+
+# - name: Include tasks for RPM installation¬
+#   include: redhat.yml¬
+#   sudo_user: root¬
+#   when: ansible_os_family == 'RedHat'¬
+
+- name: install typical global/system-wide npm packages
+  npm: name={{ item }} global=yes state=latest
+  with_items: nodejs.global_packages
+  when: ansible_distribution == 'MacOSX'
+
+- name: install typical global/system-wide npm packages as root
+  npm: name={{ item }} global=yes state=latest
+  with_items: nodejs.global_packages
+  when: ansible_distribution != 'MacOSX'
+  sudo_user: root

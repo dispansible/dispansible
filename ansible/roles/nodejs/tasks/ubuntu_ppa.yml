@@ -1,0 +1,11 @@
+---
+
+  # FIXME: base_condename won't work on linux mint. 
+- name: install chris-lea node.js ppa repository
+  apt_repository:
+    repo: ppa:chris-lea/node.js
+    base_codename: '{{ ansible_distribution_release }}'
+    update_cache: yes
+
+- name: install nodejs from chris-lea ppa repository
+  apt: name=nodejs update_cache=yes

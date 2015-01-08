@@ -3,6 +3,9 @@
     - mac_box
     - linux_box
 
+  sudo: yes
+  sudo_user: '{{ ansible_ssh_user }}'
+
   pre_tasks:
     # FIXME this check only works when no ansible tags are used!
     #       another approach will consists in adding similar checker for each software role
@@ -59,19 +62,27 @@
       when: "'rvm' not in skipped_roles"
     }
 
+  - {
+      role: nodejs,
+      tags: nodejs,
+      when: "'nodejs' not in skipped_roles"
+    }
+
 ################################################¬
 # Virtualization Tools
 ################################################¬
+
+  - {
+      role: virtualbox,
+      tags: virtualbox,
+      when: "'virtualbox' not in skipped_roles"
+    }
 
   - {
       role: vagrant,
       tags: vagrant,
       when: "'vagrant' not in skipped_roles"
     }
-
-################################################¬
-# Missing Things
-################################################¬
 
 ################################################¬
 # Last Things
@@ -82,45 +93,3 @@
       tags: home,
       when: "'home' not in skipped_roles"
     }
-
-  tasks:
-
-################################################
-# Base Tools
-################################################
-
-  - include: "{{ os }}/shell_tools.yml"
-    tags: shell_tools
-    when: "'shell_tools' not in skipped_roles"
-
-  - include: "{{ os }}/editor_tools.yml"
-    tags: editor_tools
-    when: "'editor_tools' not in skipped_roles"
-
-  - include: "{{ os }}/network_tools.yml"
-    tags: network_tools
-    when: "'network_tools' not in skipped_roles"
-
-  - include: "{{ os }}/nodejs.yml"
-    tags: nodejs
-    when: "'nodejs' not in skipped_roles"
-    vars:
-      nodejs:
-        global_packages:
-          - bower
-          - grunt-cli
-          - git-travis
-          - yo
-
-################################################
-# Virtualization Tools
-################################################
-
-  - include: "{{ os }}/virtualbox.yml"
-    tags: virtualbox
-    when: "'virtualbox' not in skipped_roles"
-    vars:
-      virtualbox:
-        version: 4.3.20
-        build:   96996
-

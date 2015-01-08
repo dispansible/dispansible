@@ -55,14 +55,21 @@ homebrew:
     # Higher Productivity Tools:
     - spotify
 
+nodejs:
+  global_packages:
+    - bower
+    - grunt-cli
+    - git-travis
+    - yo
+
 rvm:
   rubies:
     - ruby-1.9.3
     - ruby-2.0.0
     - ruby-2.1
     - ruby-2.2
-    # - rbx (disabled until missing llvm-config is solved)
-    - jruby
+    # - rbx (disabled until missing llvm-config is solved on mac platform)
+    # - jruby (disabled until maven setup is organized for linux platform)
 
 vagrant:
   version: 1.7.1
@@ -71,3 +78,7 @@ vagrant:
     - vagrant-digitalocean
     - vagrant-hostmanager
     - vagrant-vbguest
+
+virtualbox:
+  version: 4.3.20
+  build:   96996

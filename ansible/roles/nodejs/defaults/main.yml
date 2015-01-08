@@ -1,0 +1,6 @@
+---
+
+nodejs:
+  global_packages:
+    - grunt-cli
+    - bower
