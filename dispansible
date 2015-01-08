@@ -5,7 +5,9 @@ TAGS=$1
 
 ANSIBLE_HOME=$PWD/ansible
 
-GALAXY=no
+if [ -z "$GALAXY" ]; then
+  GALAXY=no
+fi
 GALAXY_ROLES_PATH=$ANSIBLE_HOME/galaxy
 GALAXY_FILE=$ANSIBLE_HOME/galaxy.yml
 GALAXY_FORCE="--force" # enable with "--force" or disable with ""
