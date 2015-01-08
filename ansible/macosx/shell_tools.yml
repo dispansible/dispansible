@@ -1,8 +1,0 @@
----
-
-- name: install classical shell tools
-  homebrew: name={{ item }} state=latest
-  with_items:
-    - gnu-sed
-
-

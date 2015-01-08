@@ -1,0 +1,10 @@
+---
+
+#
+# Ansible Roles maintained by own Software "Vendor"
+#
+- src: rvm_io.rvm1-ruby
+
+#
+# ... more stuff coming ...
+#

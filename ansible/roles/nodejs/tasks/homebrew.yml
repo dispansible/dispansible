@@ -1,0 +1,4 @@
+---
+- name: install stable version of node.js (with npm and completion)
+  homebrew: name=nodejs state=latest
+

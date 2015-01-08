@@ -1,7 +1,0 @@
----
-
-- name: install networking tools
-  homebrew: name={{ item }} state=present
-  with_items:
-    - wget
-    - nmap

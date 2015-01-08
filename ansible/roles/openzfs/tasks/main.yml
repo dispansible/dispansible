@@ -1,0 +1,10 @@
+---
+
+- name: Include tasks for Homebrew Cask installation
+  include: homebrew_cask.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Include tasks for PPA installation
+  include: ubuntu_ppa.yml
+  sudo_user: root
+  when: ansible_distribution in ['Ubuntu', 'Linuxmint']

@@ -1,0 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+  end
+
+  config.vm.define 'default' do |machine|
+
+    machine.vm.box = 'ubuntu/trusty64'
+
+    machine.vm.provision "ansible" do |ansible|
+      ansible.playbook = "playbook.yml"
+      ansible.verbose = 'v'
+      ansible.groups = { "linux_box" => "default" }
+      ansible.extra_vars="@../settings.yml"
+      #ansible.tags = ["vagrant", "virtualbox", "nodejs"]
+      #ansible.start_at_task = "install typical global/system-wide npm packages"
+
+    end
+  end
+
+end

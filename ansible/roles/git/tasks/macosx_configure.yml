@@ -1,0 +1,12 @@
+---
+
+- name: ensure that git credential-osxkeychain helper is available
+  command: git credential-osxkeychain
+  register: git_credential_osxkeychain
+  failed_when: >
+    git_credential_osxkeychain.rc != 1 and ("usage: git credential-osxkeychain <get|store|erase>" not in git_credential_osxkeychain.stderr)
+
+- name: set git to use the osxkeychain credential helper
+  command: git config --global credential.helper osxkeychain
+  when: git_global_settings.rc == 128 or git.force
+

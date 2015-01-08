@@ -1,0 +1,25 @@
+---
+
+- name: Include tasks for Homebrew Cask installation
+  include: homebrew_cask.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: Include tasks for DEB installation
+  include: debian.yml
+  when: ansible_os_family == 'Debian'
+
+# - name: Include tasks for RPM installation¬
+#   include: redhat.yml¬
+#   sudo_user: root¬
+#   when: ansible_os_family == 'RedHat'¬
+
+- name: update vagrant plugins
+  command: vagrant plugin update
+  when: vagrant.plugins
+
+# Currently requires an embedded version of `command` module, see:
+#   - https://github.com/ansible/ansible/issues/1904
+#   - https://github.com/ansible/ansible-modules-core/pull/513
+- name: install vagrant plugins
+  command: vagrant plugin install {{ item }} creates={{ ansible_env.HOME }}/.vagrant.d/gems/gems/{{ item }}*
+  with_items: vagrant.plugins

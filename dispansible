@@ -1,23 +1,37 @@
 #!/bin/bash
 
-OS=linux
-ASK_SUDO_PASS=''
+ASK_SUDO_PASS='' # '--ask-sudo-pass' is required on system without password-less sudo
+TAGS=$1
 
-OS_FAMILY=`uname -s`
-if [ "$OS_FAMILY" == "Darwin" ]; then
-  OS=macosx
-#  ASK_SUDO_PASS='--ask-sudo-pass'
+ANSIBLE_HOME=$PWD/ansible
+
+if [ -z "$GALAXY" ]; then
+  GALAXY=no
+fi
+GALAXY_ROLES_PATH=$ANSIBLE_HOME/galaxy
+GALAXY_FILE=$ANSIBLE_HOME/galaxy.yml
+GALAXY_FORCE="--force" # enable with "--force" or disable with ""
+
+if [ "$TAGS" == "" ]; then
+  TAGS=all
 fi
 
-cd ansible
+###   Ansible Galaxy   ###
 
+if [ "$GALAXY" == "yes" ]; then
+  if [ "GALAXY_FORCE" != "--force" ]; then
+    rm -rf $GALAXY_ROLES_PATH
+  fi
+  ansible-galaxy install $GALAXY_FORCE --roles-path $GALAXY_ROLES_PATH --role-file $GALAXY_FILE
+fi
+
+###  Ansible Playbook  ###
+
+cd $ANSIBLE_HOME
 ansible-playbook\
  $ASK_SUDO_PASS\
- -v\
- --sudo --sudo-user=$USER\
  --connection=local\
- --extra-vars=os=$OS\
+ --extra-vars='@../settings.yml'\
  --inventory-file=inventories/$OS\
- --module-path=library\
- --tags=$1\
+ --tags=$TAGS\
  playbook.yml

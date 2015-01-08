@@ -1,0 +1,12 @@
+---
+
+- name: install git
+  homebrew: name=git state=latest
+
+- name: install bash completion
+  homebrew: name=bash-completion state=latest
+
+- name: install more git/github goodies via homebrew
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - hub

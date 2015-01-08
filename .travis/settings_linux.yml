@@ -1,0 +1,17 @@
+---
+
+skipped_roles:
+  - openzfs    # disabled until we fix the held broken packages on apt-get install.
+
+git:
+  force:       yes
+  user:
+    fullname:  'Gruffalo Bill'
+    email:     'gruffalo@travis-ci.org'
+
+rvm:
+  rubies:
+    - ruby-1.9.3
+    - ruby
+    - rbx
+    - jruby

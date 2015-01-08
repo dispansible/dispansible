@@ -1,0 +1,5 @@
+---
+
+vagrant:
+  download_base_url: 'https://dl.bintray.com/mitchellh/vagrant'
+

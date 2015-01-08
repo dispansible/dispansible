@@ -1,4 +1,0 @@
----
-- name: install intellij idea ultimate edition
-  homebrew_cask: name=intellij-idea
-

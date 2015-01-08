@@ -1,0 +1,10 @@
+---
+
+- name: install oracle virtualbox.pkg for MacOSX
+  mac_pkg: pkg_name=org.virtualbox.pkg.virtualbox pkg_version={{ virtualbox.version }}
+           url=http://download.virtualbox.org/virtualbox/{{ virtualbox.version }}/VirtualBox-{{ virtualbox.version }}-{{ virtualbox.build }}-OSX.dmg
+           archive_type=dmg archive_path=VirtualBox.pkg
+  sudo_user: root
+
+# - name: install virtualbox¬
+#   homebrew_cask: name=virtualbox¬

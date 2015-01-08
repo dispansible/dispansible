@@ -10,8 +10,11 @@ This project initially began as a fork of https://github.com/spencergibb/ansible
 
 ## Dependencies
 
-* [Ansible](http://ansible.com) 1.6+
+* [Ansible](http://ansible.com) 1.8+
 * The additional module `mac_pkg` is taken from Spencer Gibb's [battleschool](https://github.com/spencergibb/battleschool/blob/v0.4.0/share/library/mac_pkg)
+* Some Ansible core modules are overridden (which implies to use most recent version of Ansible):
+  * [`apt_repository`](https://github.com/ansible/ansible-modules-core/pull/190) to be able to add PPA repository for LinuxMint
+  * [`command`](https://github.com/ansible/ansible-modules-core/pull/513) to be able to add an idempotence condition for Vagrant plugins setup
 
 ## About the name
 
@@ -25,9 +28,13 @@ Definition of `expansible` adjective: *That can expand or be expanded*. In other
 
 ## Setup
 
+**WARNING:** During alpha phase the configuration file names and locations are unstable and this documentation might not be up to date.
+
 * Install `ansible` (this [step should be integrated](https://github.com/gildegoma/dispansible/issues/1) into `dispansible` tool chain in a "near" future)
 * Clone via `git` or Download as tarball this repository (or your own fork)
-* Optionally update the [`ansible/group_vars/all`](https://github.com/gildegoma/dispansible/blob/master/ansible/group_vars/all) file in order to select which software parts you want to install
+* Optionally update the following configuration files:
+  * [`ansible/galaxy.yml`](https://github.com/gildegoma/dispansible/blob/master/ansible/galaxy.yml) to change the external roles that you are depending on.
+  * [`settings.yml`](https://github.com/gildegoma/dispansible/blob/master/settings.yml) to customize your software configuration and optionally unselect applications (using the `skipped_roles` list)
 * Execute `./dispansible all`
 * Enjoy a drink (while keeping an eye on your screen, since [the sudo password could be prompted](https://github.com/gildegoma/dispansible/issues/2) during the setup procedure)
 

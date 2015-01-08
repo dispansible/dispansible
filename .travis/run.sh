@@ -12,7 +12,7 @@ ansible-lint --version¬
 
 cd $TRAVIS_BUILD_DIR/ansible
 
-echo "Run ansible-lint"
+echo "Run ansible-lint (allowing failures for now)"
 ansible-lint $PLAYBOOK
 
 echo "Run ansible syntax checks"
@@ -25,8 +25,7 @@ echo "rubber testing stuff is pending..."
 cd $TRAVIS_BUILD_DIR
 
 echo "Customize dispansible settings for Travis"
-cp .travis/ansible_vars ansible/group_vars/all
+cp .travis/settings_${TRAVIS_OS_NAME}.yml ./settings.yml
 
 echo "Run dispansible"
 ./dispansible all
-

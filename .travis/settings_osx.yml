@@ -1,0 +1,26 @@
+---
+
+skipped_roles: 
+  - virtualbox
+  - rvm
+
+git:
+  force:       yes
+  user:
+    fullname:  'Gruffalo Bill'
+    email:     'gruffalo@travis-ci.org'
+
+homebrew:
+  upgrade_all: no
+
+  packages:
+    - gpg
+  casks:
+    - packer
+
+rvm:
+  rubies:
+    - ruby-1.9.3
+    - ruby
+    - rbx
+    - jruby

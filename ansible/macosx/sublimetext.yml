@@ -1,5 +1,0 @@
----
-
-- name: install sublimetext
-  homebrew_cask: name=sublime-text
-

@@ -3,121 +3,93 @@
     - mac_box
     - linux_box
 
-  tasks:
+  sudo: yes
+  sudo_user: '{{ ansible_ssh_user }}'
 
-################################################
-# First things
-################################################
+  pre_tasks:
+    # FIXME this check only works when no ansible tags are used!
+    #       another approach will consists in adding similar checker for each software role
+    - name: Check for unsupported platform
+      fail: msg="The operating system {{ ansible_distribution }} / {{ ansible_os_family }}) is not currently supported."
+      when: "ansible_distribution not in ['Debian', 'Linuxmint', 'MacOSX', 'Ubuntu']"
 
-  - name: update homebrew formulaes and upgrade already installed software
-    homebrew: update_homebrew=yes upgrade_all=yes
-    tags: homebrew_upgrade_all
-    when: os == "macosx" and software.homebrew.upgrade_all
+  roles:
 
-  - include: "macosx/homebrew_extras.yml"
-    tags: homebrew_extras
-    when: os == "macosx" and software.homebrew_extras
+################################################¬
+# First Things
+################################################¬
+
+  - {
+      role: homebrew,
+      tags: homebrew,
+      when: "'homebrew' not in skipped_roles"
+    }
 
 ################################################
 # Low Level Stuff
 ################################################
 
-  - include: "{{ os }}/openzfs.yml"
-    tags: openzfs
-    when: software.openzfs
+  - {
+      role: openzfs,
+      tags: openzfs,
+      when: "'openzfs' not in skipped_roles"
+    }
 
 ################################################
 # Base Tools
 ################################################
 
-  - include: "{{ os }}/shell_tools.yml"
-    tags: shell_tools
-    when: software.shell_tools
-
-  - include: "{{ os }}/editor_tools.yml"
-    tags: editor_tools
-    when: software.editor_tools
-
-  - include: "{{ os }}/network_tools.yml"
-    tags: network_tools
-    when: software.network_tools
-
-  - include: "{{ os }}/git.yml"
-    tags: git
-    when: software.git
-    vars:
-      git:
-        user:
-          fullname: 'Gilles Cornu'
-          email:    'git@gilles.cornu.name'
-
-  - include: "{{ os }}/nodejs.yml"
-    tags: nodejs
-    when: software.nodejs
-    vars:
-      nodejs:
-        global_packages:
-          - bower
-          - grunt-cli
-          - git-travis
-          - yo
-
-  - include: "{{ os }}/sourcetree.yml"
-    tags: sourcetree
-    when: software.sourcetree
+  - {
+      role: git,
+      tags: git,
+      when: "'git' not in skipped_roles"
+    }
 
 ################################################
+# Programming Language Tools
+################################################
+
+
+  # By default this role makes a system-wide setup,
+  # but here we want a user setup.
+  - {
+      role: 'rvm_io.rvm1-ruby',
+      rvm1_user: '{{ ansible_env.USER }}',
+      rvm1_install_path: '{{ ansible_env.HOME }}/.rvm',
+      rvm1_install_flags: '--auto-dotfiles --autolibs=homebrew --user-install',
+      rvm1_rubies: '{{ rvm.rubies }}',
+      tags: rvm,
+      when: "'rvm' not in skipped_roles"
+    }
+
+  - {
+      role: nodejs,
+      tags: nodejs,
+      when: "'nodejs' not in skipped_roles"
+    }
+
+################################################¬
 # Virtualization Tools
-################################################
+################################################¬
 
-  - include: "{{ os }}/packer.yml"
-    tags: packer
-    when: software.packer
+  - {
+      role: virtualbox,
+      tags: virtualbox,
+      when: "'virtualbox' not in skipped_roles"
+    }
 
-  - include: "{{ os }}/virtualbox.yml"
-    tags: virtualbox
-    when: software.virtualbox
-    vars:
-      virtualbox:
-        version: 4.3.20
-        build:   96996
+  - {
+      role: vagrant,
+      tags: vagrant,
+      when: "'vagrant' not in skipped_roles"
+    }
 
-  - include: "{{ os }}/vagrant.yml"
-    tags: vagrant
-    when: software.vagrant
-
-################################################
-# IDE, Editor, ...
-################################################
-
-  - include: "{{ os }}/intellij_idea.yml"
-    tags: intellij_idea
-    when: software.intellij_idea
-
-  - include: "{{ os }}/sublimetext.yml"
-    tags: sublimetext
-    when: software.sublimetext
-
-################################################
-# Mandatory Optionals
-################################################
-
-  - include: "{{ os }}/spotify.yml"
-    tags: spotify
-    when: software.spotify
-
-################################################
-# Office Material
-################################################
-
-  - include: "{{ os }}/libreoffice.yml"
-    tags: libreoffice
-    when: software.libreoffice
-
-################################################
+################################################¬
 # Last Things
-################################################
+################################################¬
 
-  - include: "common/home.yml"
-    tags: home
-    when: software.home
+  - {
+      role: home,
+      tags: home,
+      when: "'home' not in skipped_roles"
+    }

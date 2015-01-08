@@ -1,0 +1,14 @@
+---
+
+  # At the moment, an patched version of the apt_repository is embedded to support
+  # a custom base_codename value, which is required when installing on LinuxMint for instance.
+  # see https://github.com/ansible/ansible-modules-core/pull/190/files
+  # FIXME: trusty should not be hard-coded
+- name: install zfs ppa repository
+  apt_repository: repo=ppa:zfs-native/stable base_codename='trusty' update_cache=yes
+
+- name: install zfs with linux kernel-level support
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - ubuntu-zfs
+    #- zfs-auto-snapshot
