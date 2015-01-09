@@ -1,0 +1,14 @@
+---
+
+apt:
+  upgrade_all:    yes
+  update_cache:   yes
+  install_policy: latest  # possible values: latest,present
+  upgrade_policy: dist    # possible values: no,yes,safe,full,dist
+
+# FIXME: add support for PPAs
+#  ppa_repositories:
+#    - ...
+#  packages:
+#    - cowsay
+#    - ...

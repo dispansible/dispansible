@@ -3,6 +3,11 @@
 skipped_roles:
   - openzfs    # disabled until we fix the held broken packages on apt-get install.
 
+apt:
+  upgrade_all: no
+  packages:
+    - cowsay
+
 git:
   force:       yes
   user:

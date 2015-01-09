@@ -12,6 +12,12 @@ git:
     fullname: 'Gilles Cornu'
     email:    'git@gilles.cornu.name'
 
+apt:
+  upgrade_all:   no
+  packages:
+    - wget
+    - curl
+
 homebrew:
   upgrade_all:   no
 

@@ -16,8 +16,14 @@
   roles:
 
 ################################################¬
-# First Things
+# Package Managers
 ################################################¬
+
+  - {
+      role: apt,
+      tags: apt,
+      when: "'apt' not in skipped_roles"
+    }
 
   - {
       role: homebrew,
