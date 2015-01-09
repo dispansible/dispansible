@@ -18,11 +18,11 @@ This project initially began as a fork of https://github.com/spencergibb/ansible
 
 ## About the name
 
-### TL;DR`
+### TL;DR
 
 `dispansible` aims at brings you more **available** time for doing amazing things, but of course this tool is not **indispensable**, as you can always install your software manually. Mmmh, really?
 
-### Ethymological Roots:
+### Ethymological Roots
 
 * **dispensible**: *obsolete adjective, alternative form of dispensable*
 * **[dispensable](http://en.wiktionary.org/wiki/dispensable)**: 
@@ -33,9 +33,10 @@ This project initially began as a fork of https://github.com/spencergibb/ansible
   1. Designed to be disposed of after use
   1. Free for use; available
 
-Quoting @mitchellh in his Book "Vagrant: Up and Running":
+Quoting Mitchell Hashimoto in his Book "Vagrant: Up and Running":
 
 > Vagrant lowers development environment setup time, increases development/production parity, and brings the idea of disposable compute resources down to the desktop.
+
 Let's say that `dispansible` aims at lowers *workstation* setup time, increases co-worker parity, and brings the idea of **disposable** software setup (but please don't get me wrong: **not your hardware!!!**).
 
 ## Setup
