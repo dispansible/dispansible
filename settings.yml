@@ -15,6 +15,10 @@ git:
 apt:
   upgrade_all:   no
   packages:
+    # Base Tools
+    - vim
+
+    # Network Tools
     - wget
     - curl
 
