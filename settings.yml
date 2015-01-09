@@ -74,7 +74,7 @@ rvm:
     # - jruby (disabled until maven setup is organized for linux platform)
 
 vagrant:
-  version: 1.7.1
+  version: 1.7.2
   plugins:
     - vagrant-cachier
     - vagrant-digitalocean
