@@ -18,22 +18,34 @@ This project initially began as a fork of https://github.com/spencergibb/ansible
 
 ## About the name
 
-**WARNING:** This project is beeing [renamed](https://github.com/gildegoma/dispansible/issues/5) from `expansible` to `dispansible`.
-Note that the http://expansible.io project is developed at https://github.com/rastaman/expansible.
+### TL;DR`
 
-Definition of `expansible` adjective: *That can expand or be expanded*. In other words, this tools is thought 
+`dispansible` aims at brings you more **available** time for doing amazing things, but of course this tool is not **indispensable**, as you can always install your software manually. Mmmh, really?
 
-* to *expand* your easy computing **exp**erience thanks to **ansible** capabilities.
-* to be easily *expanded* by its user community (see the [Contributing Guide](https://github.com/gildegoma/expansible/blob/master/CONTRIBUTING.md)).
+### Ethymological Roots:
+
+* **dispensible**: *obsolete adjective, alternative form of dispensable*
+* **[dispensable](http://en.wiktionary.org/wiki/dispensable)**: 
+  1. Able to be done without; able to be expended; easily replaced.
+  1. Capable of being dispensed; distributable.
+  1. ...
+* **[disposable](http://www.thefreedictionary.com/disposable)**:
+  1. Designed to be disposed of after use
+  1. Free for use; available
+
+Quoting @mitchellh in his Book "Vagrant: Up and Running":
+
+> Vagrant lowers development environment setup time, increases development/production parity, and brings the idea of disposable compute resources down to the desktop.
+Let's say that `dispansible` aims at lowers *workstation* setup time, increases co-worker parity, and brings the idea of **disposable** software setup (but please don't get me wrong: **not your hardware!!!**).
 
 ## Setup
 
 **WARNING:** During alpha phase the configuration file names and locations are unstable and this documentation might not be up to date.
 
-* Install `ansible` (this [step should be integrated](https://github.com/gildegoma/dispansible/issues/1) into `dispansible` tool chain in a "near" future)
 * Clone via `git` or Download as tarball this repository (or your own fork)
+* Install Ansible (latest release is usually recommended). You can use one of the `bootsrap_<platform>` scripts in the `scripts` directory for that purpose.
 * Optionally update the following configuration files:
-  * [`ansible/galaxy.yml`](https://github.com/gildegoma/dispansible/blob/master/ansible/galaxy.yml) to change the external roles that you are depending on.
+  * [`ansible/galaxy.yml`](https://github.com/gildegoma/dispansible/blob/master/ansible/galaxy.yml) to change the external roles that you are depending on. If you change this file, you most probably will need to modify `ansible/playbook.yml` as well.
   * [`settings.yml`](https://github.com/gildegoma/dispansible/blob/master/settings.yml) to customize your software configuration and optionally unselect applications (using the `skipped_roles` list)
 * Execute `./dispansible all`
 * Enjoy a drink (while keeping an eye on your screen, since [the sudo password could be prompted](https://github.com/gildegoma/dispansible/issues/2) during the setup procedure)
@@ -42,15 +54,21 @@ Definition of `expansible` adjective: *That can expand or be expanded*. In other
 
 ### dispansible tool
 
-Install everything that is enabled in `ansible/group_vars/all`:
+Install everything that is enabled in `settings.yml`:
 
-```bash
+```shell
 ./dispansible all
+```
+
+or
+
+```shell
+./dispansible
 ```
 
 Install specific software:
 
-```
+```shell
 ./dispansible vagrant,virtualbox
 ```
 
