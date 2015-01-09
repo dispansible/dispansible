@@ -32,6 +32,6 @@ ansible-playbook\
  $ASK_SUDO_PASS\
  --connection=local\
  --extra-vars='@../settings.yml'\
- --inventory-file=inventories/$OS\
+ --inventory-file=inventories/\
  --tags=$TAGS\
  playbook.yml
