@@ -62,7 +62,7 @@
       role: 'rvm_io.rvm1-ruby',
       rvm1_user: '{{ ansible_env.USER }}',
       rvm1_install_path: '{{ ansible_env.HOME }}/.rvm',
-      rvm1_install_flags: '--auto-dotfiles --autolibs=homebrew --user-install',
+      rvm1_install_flags: '--auto-dotfiles --autolibs=enable --user-install',
       rvm1_rubies: '{{ rvm.rubies }}',
       tags: rvm,
       when: "'rvm' not in skipped_roles"
