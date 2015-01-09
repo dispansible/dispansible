@@ -37,7 +37,7 @@ Quoting Mitchell Hashimoto in his Book "Vagrant: Up and Running":
 
 > Vagrant lowers development environment setup time, increases development/production parity, and brings the idea of disposable compute resources down to the desktop.
 
-Let's say that `dispansible` aims at lowers *workstation* setup time, increases co-worker parity, and brings the idea of **disposable** software setup (but please don't get me wrong: **not your hardware!!!**).
+Let's say that `dispansible` aims at lowers *workstation* setup time, increases operating systems parity, and brings the idea of **disposable** software setup (but please don't get me wrong: **not your hardware!!!**).
 
 ## Setup
 
