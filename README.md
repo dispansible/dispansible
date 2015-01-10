@@ -33,6 +33,14 @@ This project initially began as a fork of https://github.com/spencergibb/ansible
   1. Designed to be disposed of after use
   1. Free for use; available
 
+### Design Philosophy
+
+`dispansible` approach follows the design principles of **[ansible (software)](http://en.wikipedia.org/wiki/Ansible_(software))**:
+
+  1. Minimal in nature. Manage your software installations should not impose additional dependencies on the environment. See the [Dependencies Section]() above.
+  1. Highly reliable. The ansible idempotent resource model is applied to prevent side-effects from re-running scripts.
+  1. Low learning curve.
+
 Quoting Mitchell Hashimoto in his Book "Vagrant: Up and Running":
 
 > Vagrant lowers development environment setup time, increases development/production parity, and brings the idea of disposable compute resources down to the desktop.
