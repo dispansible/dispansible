@@ -2,6 +2,8 @@
 
 homebrew:
   upgrade_all:  no
+#  taps:
+#    - peco/peco
 #  packages:
 #    - cowsay
 #    - ...

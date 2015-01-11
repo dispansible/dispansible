@@ -15,6 +15,10 @@ git:
 homebrew:
   upgrade_all:   no
 
+  # see ...
+  taps:
+    - peco/peco
+
   # see available packages at http://braumeister.org
   packages:
     # Base Tools:
@@ -22,6 +26,8 @@ homebrew:
     - coreutils
     - gpg
     - gnu-sed
+    - peco
+    - tree
     - vim
 
     # Network Tools

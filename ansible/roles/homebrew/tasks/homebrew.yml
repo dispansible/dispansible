@@ -5,11 +5,15 @@
            script_prefix='echo | ' script_exe=ruby
            url=https://raw.github.com/Homebrew/homebrew/go/install
 
-- name: tap external homebrew repositories
+- name: tap very common external homebrew repositories
   homebrew_tap: tap={{ item }}
   with_items:
     - homebrew/versions
     - homebrew/completions
+
+- name: tap more external homebrew repositories
+  homebrew_tap: tap={{ item }}
+  with_items: homebrew.taps
 
 # TODO add some idempotence creates conditions
 # TODO why homebrew module fails ...?
