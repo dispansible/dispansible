@@ -13,7 +13,7 @@
 
 - name: tap more external homebrew repositories
   homebrew_tap: tap={{ item }}
-  with_items: homebrew.taps
+  with_items: "{{ homebrew.taps|default([]) }}"
 
 # TODO add some idempotence creates conditions
 # TODO why homebrew module fails ...?
