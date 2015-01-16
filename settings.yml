@@ -54,7 +54,6 @@ homebrew:
     - sourcetree
     - intellij-idea
     - lighttable
-    - sublime-text
     - java
 
     # DevOps Tools:
@@ -69,6 +68,13 @@ nodejs:
     - grunt-cli
     - git-travis
     - yo
+
+sublimetext:
+  plugins:
+    from_git:
+      - name:    TrailingSpaces
+        repo:    https://github.com/SublimeText/TrailingSpaces.git
+        version: 3909e375388d698b25d70cc8dcf1f4115706bc0d # e.g. v1.0.0, master
 
 rvm:
   rubies:

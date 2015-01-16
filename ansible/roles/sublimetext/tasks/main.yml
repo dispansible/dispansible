@@ -1,0 +1,35 @@
+---
+
+- name: Include tasks for Homebrew Cask installation
+  include: homebrew_cask.yml
+  when: ansible_distribution == 'MacOSX'
+
+#- name: Include tasks for DEB installation
+#  include: debian.yml
+#  when: ansible_os_family == 'Debian'
+
+# - name: Include tasks for RPM installation¬
+#   include: redhat.yml¬
+#   sudo_user: root¬
+#   when: ansible_os_family == 'RedHat'¬
+
+#- name: update sublimetext plugins
+#  command: ...
+#  when: sublimetext.plugins
+
+# TODO ansible git module requires to set the destination path including the cloned directory name
+#      -> introduced item.name as quickest solution, but it could be somehow improved by extracting
+#         it from the git url (if not specified)
+- name: install sublimetext plugins from related git repository
+  git: 
+    repo:     "{{ item.repo }}"
+    version:  "{{ item.version|default('master') }}"
+    dest:     "{{ sublimetext.appdata_dir[ansible_system] }}/Packages/{{ item.name }}"
+  with_items: "{{ sublimetext.plugins.from_git|default([]) }}"
+#  notify: restart sublimetext
+
+#- name: install sublimetext plugins from a release tarball
+#  unarchive: TODO{{ item }}
+#  with_items:"{{ sublimetext.plugins.from_archive|default([]) }}"
+#  notify: restart sublimetext
+

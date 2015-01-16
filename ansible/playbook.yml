@@ -68,7 +68,17 @@
       when: "'nodejs' not in skipped_roles"
     }
 
+#################################################¬
+# Text Editors, IDE,...
 ################################################¬
+
+  - {
+      role: sublimetext,
+      tags: sublimetext,
+      when: "'sublimetext' not in skipped_roles"
+    }
+
+###############################################¬
 # Virtualization Tools
 ################################################¬
 

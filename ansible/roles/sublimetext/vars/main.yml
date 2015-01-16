@@ -1,0 +1,6 @@
+sublimetext:
+  appdata_dir:
+    Linux:  '{{ ansible_env.HOME }}/.config/sublime-text-2'
+    Darwin: '{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 2'
+    #Windows: not supported yet
+    #Java: should fail
