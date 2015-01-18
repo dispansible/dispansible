@@ -5,6 +5,6 @@
 vagrant:
   #FIXME the version option is only considered in Linux environment.
   #      on mac, homebrew only can provide the "latest" version. 
-  version: 1.7.1
+  version: 1.7.2
   plugins:
     - vagrant-cachier
