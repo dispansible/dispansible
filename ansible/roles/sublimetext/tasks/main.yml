@@ -21,7 +21,7 @@
 #      -> introduced item.name as quickest solution, but it could be somehow improved by extracting
 #         it from the git url (if not specified)
 - name: install sublimetext plugins from related git repository
-  git: 
+  git:
     repo:     "{{ item.repo }}"
     version:  "{{ item.version|default('master') }}"
     dest:     "{{ sublimetext.appdata_dir[ansible_system] }}/Packages/{{ item.name }}"
