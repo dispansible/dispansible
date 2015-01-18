@@ -1,7 +1,8 @@
 ---
 
 skipped_roles:
-  - openzfs    # disabled until we fix the held broken packages on apt-get install.
+  - openzfs      # disabled until we fix the held broken packages on apt-get install.
+  - sublimetext  # not implemented yet
 
 git:
   force:       yes
