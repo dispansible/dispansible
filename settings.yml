@@ -76,6 +76,9 @@ sublimetext:
       - name:    TrailingSpaces
         repo:    https://github.com/SublimeText/TrailingSpaces.git
         version: 3909e375388d698b25d70cc8dcf1f4115706bc0d # e.g. v1.0.0, master
+      - name:    SublimeREPL
+        repo:    https://github.com/wuub/SublimeREPL.git
+        version: 2.1.1 #master is currently affected by https://github.com/wuub/SublimeREPL/issues/342
 
 rvm:
   rubies:
