@@ -23,3 +23,8 @@
 - name: install vagrant plugins
   command: vagrant plugin install {{ item }} creates={{ ansible_env.HOME }}/.vagrant.d/gems/gems/{{ item }}*
   with_items: vagrant.plugins
+
+- name: compose a global Vagrantfile
+  template:
+    src: vagrant_home/Vagrantfile.j2
+    dest: "{{ ansible_env.HOME }}/.vagrant.d/Vagrantfile"
