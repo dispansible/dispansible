@@ -56,6 +56,11 @@
 # Programming Language Tools
 ################################################
 
+  - {
+      role: clojure_tools,
+      tags: clojure_tools,
+      when: "'clojure_tools' not in skipped_roles"
+    }
 
   # By default this role makes a system-wide setup,
   # but here we want a user setup.

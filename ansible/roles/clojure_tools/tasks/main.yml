@@ -1,0 +1,11 @@
+---
+
+# TODO - name: Ensure that Leiningen is available?
+
+- name: create ~/.lein directory
+  file: state=directory path={{ ansible_env.HOME }}/.lein
+
+- name: compose ~/.lein/profiles.clj
+  template:
+    src:  lein/profiles.clj.j2
+    dest: "{{ ansible_env.HOME }}/.lein/profiles.clj"
