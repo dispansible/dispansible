@@ -1,0 +1,64 @@
+[
+  { "keys": ["escape"], "command": "auto_complete", "context":
+    [
+      { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+      { "key": "overlay_visible", "operator": "equal", "operand": false },
+      { "key": "panel_visible", "operator": "equal", "operand": false },
+      { "key": "num_selections", "operator": "equal", "operand": 1 }
+    ]
+  },
+ 
+  { "keys": ["super+shift+t"], "command": "reopen_last_file" },
+  { "keys": ["ctrl+super+r"], "command": "reveal_in_side_bar" },
+ 
+ 
+  // SublimeREPL bindings:
+  // =====================
+ 
+  { "keys": ["alt+super+b"], "command": "repl_transfer_current", "args": {"scope": "block"}},
+  { "keys": ["alt+super+r"], "command": "refresh_namespaces_in_repl"},
+  { "keys": ["alt+super+i"], "command": "switch_to_current_namespace_in_repl"},
+  { "keys": ["alt+super+x"], "command": "run_clojure_tests_from_current_namespace_in_repl"},
+  { "keys": ["alt+super+a"], "command": "run_all_clojure_tests_from_project_in_repl"},
+ 
+ 
+  // BracketHighlighter bindings:
+  // ===========================
+ 
+  // Swap bracket type
+  { "keys": ["ctrl+shift+]"],
+    "command": "swap_brackets"},
+ 
+  // Swap quotes (only goes boths ways in supported languages...)
+  { "keys": ["ctrl+shift+'"],
+    "command": "bh_key", "args": {"lines" : true, "plugin": {"type": ["single_quote", "double_quote", "py_single_quote", "py_double_quote"], "command": "bh_modules.swapquotes"} }},
+ 
+  // Select text between brackets
+  { "keys": ["ctrl+alt+a"],
+    "command": "bh_key", "args": {"lines" : true, "plugin": {"type": ["__all__"], "command": "bh_modules.bracketselect"} } },
+ 
+  // Select tag name of HTML/XML tag (both opening name and closing)
+  { "keys": ["ctrl+alt+t"],
+    "command": "bh_key", "args": {"plugin": {"type": ["cfml", "html", "angle"], "command": "bh_modules.tagnameselect"} } },
+ 
+  // Toggle high visibility mode
+  { "keys": ["alt+super+="],
+    "command": "bh_toggle_high_visibility"},
+ 
+ 
+  // sublime-paredit fixes:
+  // ======================
+ 
+  // Don't constrain close-parens unless we're in paredit mode:
+  { "keys": [")"], "command": "insert_snippet", "args": {"contents": ")"}, "context":
+    [{ "key": "setting.paredit_enabled", "operator": "equal", "operand": false }]},
+  { "keys": [")"], "command": "run_macro_file", "args": {"file": "Packages/sublime-paredit/Paredit Closing Bracket.sublime-macro_"}, "context":
+    [{ "key": "setting.paredit_enabled", "operator": "equal", "operand": true }]},
+  { "keys": [")"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
+    [
+      { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+      { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+      { "key": "following_text", "operator": "regex_contains", "operand": "^\\)", "match_all": true }
+    ]
+  }
+]

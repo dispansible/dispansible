@@ -33,3 +33,8 @@
 #  with_items:"{{ sublimetext.plugins.from_archive|default([]) }}"
 #  notify: restart sublimetext
 
+- name: configure user custom keybindings
+  template:
+    src:  User_Default_OSX.sublime-keymap.j2
+    dest: "{{ sublimetext.appdata_dir[ansible_system] }}/Packages/User/Default (OSX).sublime-keymap"
+  when: ansible_distribution == 'MacOSX'
