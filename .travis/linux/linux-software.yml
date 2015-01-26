@@ -4,12 +4,6 @@ skipped_roles:
   - openzfs      # disabled until we fix the held broken packages on apt-get install.
   - sublimetext  # not implemented yet
 
-git:
-  force:       yes
-  user:
-    fullname:  'Gruffalo Bill'
-    email:     'gruffalo@travis-ci.org'
-
 rvm:
   rubies:
     - ruby-1.9.3

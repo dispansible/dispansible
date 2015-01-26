@@ -1,0 +1,10 @@
+---
+
+# TODO add some idempotence creates conditions
+# TODO why homebrew module fails ...?
+- name: install homebrew cask
+  command: brew install caskroom/cask/brew-cask
+
+- name: install requested casks
+  homebrew_cask: name={{ item }}
+  with_items: "{{ homebrew.casks|default([]) }}"

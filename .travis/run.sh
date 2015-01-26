@@ -25,7 +25,7 @@ echo "rubber testing stuff is pending..."
 cd $TRAVIS_BUILD_DIR
 
 echo "Customize dispansible settings for Travis"
-cp .travis/settings_${TRAVIS_OS_NAME}.yml ./settings.yml
+export DISPANSIBLE_SETTINGS_DIR=${TRAVIS_BUILD_DIR}/.travis/${TRAVIS_OS_NAME}
 
 echo "Run dispansible"
 ./dispansible all

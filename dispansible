@@ -5,6 +5,16 @@ TAGS=$1
 
 ANSIBLE_HOME=$PWD/ansible
 
+if [ -z "$DISPANSIBLE_SETTINGS_DIR" ]; then
+  DISPANSIBLE_SETTINGS_DIR=$PWD/settings
+fi
+
+OS=linux
+OS_FAMILY=`uname -s`
+if [ "$OS_FAMILY" == "Darwin" ]; then
+  OS=macosx
+fi
+
 if [ -z "$GALAXY" ]; then
   GALAXY=yes
 fi
@@ -31,7 +41,9 @@ cd $ANSIBLE_HOME
 ansible-playbook\
  $ASK_SUDO_PASS\
  --connection=local\
- --extra-vars='@../settings.yml'\
+ --extra-vars="@${DISPANSIBLE_SETTINGS_DIR}/private.yml"\
+ --extra-vars="@${DISPANSIBLE_SETTINGS_DIR}/${OS}-software.yml"\
+ --extra-vars="@${DISPANSIBLE_SETTINGS_DIR}/common-software.yml"\
  --inventory-file=inventories/$OS\
  --tags=$TAGS\
  playbook.yml

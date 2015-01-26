@@ -1,0 +1,59 @@
+---
+
+homebrew:
+
+  # see available packages at http://braumeister.org
+  packages:
+    # Base Tools:
+    - bash
+    - bash-completion
+    - coreutils
+    - dos2unix
+    - gpg
+    - gnu-sed
+    - peco
+    - stow
+    - tree
+    - vim
+    - zsh-completions
+
+    # Network Tools
+    - curl
+    - nmap
+    - wget
+    - youtube-dl
+
+    # Developer Tools:
+    - leiningen
+    - liquibase
+    - llvm
+    - maven
+    - subversion
+
+  # see available casks at http://caskroom.io
+  casks:
+    # Security
+    - keepassx
+
+    # Web Tools:
+    - firefox
+    - google-chrome
+
+    # Office Tools:
+    - libreoffice
+
+    # Developer Tools:
+    - sourcetree
+    - intellij-idea
+    - lighttable
+    - java
+
+    # DevOps Tools:
+    - packer
+
+    # Communication
+    - colloquy
+
+    # Multimedia
+    - spotify
+    - vlc

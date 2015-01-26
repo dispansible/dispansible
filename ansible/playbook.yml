@@ -20,6 +20,18 @@
 ################################################¬
 
   - {
+      role: home,
+      tags: home,
+      when: "'home' not in skipped_roles"
+    }
+
+  - {
+      role: git,
+      tags: git,
+      when: "'git' not in skipped_roles"
+    }
+
+  - {
       role: homebrew,
       tags: homebrew,
       when: "'homebrew' not in skipped_roles"
@@ -39,11 +51,6 @@
 # Base Tools
 ################################################
 
-  - {
-      role: git,
-      tags: git,
-      when: "'git' not in skipped_roles"
-    }
 
 ################################################
 # Programming Language Tools
@@ -98,8 +105,4 @@
 # Last Things
 ################################################¬
 
-  - {
-      role: home,
-      tags: home,
-      when: "'home' not in skipped_roles"
-    }
+

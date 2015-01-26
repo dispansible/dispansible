@@ -1,0 +1,10 @@
+---
+
+homebrew:
+  upgrade_all:   no
+
+  # see available packages at http://braumeister.org
+  packages:
+    - leiningen
+    - maven
+    - peco

@@ -1,1 +1,0 @@
-../scripts/bootstrap_ubuntu.sh

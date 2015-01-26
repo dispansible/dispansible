@@ -1,0 +1,33 @@
+
+{% if ansible_system == 'Linux' %}
+#
+# Load `brew` in Linux
+#
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+{% endif %}
+
+#
+# Load RVM
+#
+# TODO: add a condition check (RVM must be installed)
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+#
+# Enable Bash and ZSH Completion
+#
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
+
+#
+# alias hub to git for best feelings!
+# see https://github.com/github/hub#aliasing
+#
+if [ -x /usr/local/bin/hub ]; then
+  eval "$(hub alias -s)"
+fi

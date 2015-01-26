@@ -1,0 +1,8 @@
+---
+
+git:
+  force:      no
+  user:
+    fullname: '{{ dispansible.private.user.fullname }}'
+    email:    '{{ dispansible.private.user.email }}'
+

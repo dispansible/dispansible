@@ -3,3 +3,31 @@
 - name: Install homebrew only on MacOSX platform
   include: homebrew.yml
   when: ansible_distribution == 'MacOSX'
+
+- name: Install linuxbrew only on Linux platforms
+  include: linuxbrew.yml
+  when: ansible_system == 'Linux'
+
+# TODO fail/finish if brew is not installed/supported at this point
+
+- name: tap very common external homebrew repositories
+  homebrew_tap: tap={{ item }}
+  with_items:
+    - homebrew/versions
+    - homebrew/completions
+
+- name: tap more external homebrew repositories
+  homebrew_tap: tap={{ item }}
+  with_items: "{{ homebrew.taps|default([]) }}"
+
+- name: update homebrew formulaes and upgrade already installed software
+  homebrew: update_homebrew=yes upgrade_all=yes
+  when: homebrew.upgrade_all
+
+- name: Use Hombrew Cask only on MacOSX platform
+  include: homebrew_cask.yml
+  when: ansible_distribution == 'MacOSX'
+
+- name: install requested homebrew packages
+  homebrew: name={{ item }}
+  with_items: "{{ homebrew.packages|default([]) }}"

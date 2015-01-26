@@ -4,30 +4,3 @@
   mac_pkg: pkg_type=script script_creates=/usr/local/bin/brew
            script_prefix='echo | ' script_exe=ruby
            url=https://raw.github.com/Homebrew/homebrew/go/install
-
-- name: tap very common external homebrew repositories
-  homebrew_tap: tap={{ item }}
-  with_items:
-    - homebrew/versions
-    - homebrew/completions
-
-- name: tap more external homebrew repositories
-  homebrew_tap: tap={{ item }}
-  with_items: "{{ homebrew.taps|default([]) }}"
-
-# TODO add some idempotence creates conditions
-# TODO why homebrew module fails ...?
-- name: install homebrew cask
-  command: brew install caskroom/cask/brew-cask
-
-- name: update homebrew formulaes and upgrade already installed software
-  homebrew: update_homebrew=yes upgrade_all=yes
-  when: homebrew.upgrade_all
-
-- name: install more homebrew packages
-  homebrew: name={{ item }}
-  with_items: "{{ homebrew.packages|default([]) }}"
-
-- name: install more homebrew casks
-  homebrew_cask: name={{ item }}
-  with_items: "{{ homebrew.casks|default([]) }}"

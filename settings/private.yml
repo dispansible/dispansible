@@ -1,0 +1,7 @@
+---
+
+dispansible:
+  private:
+    user:
+      fullname: 'Gilles Cornu'
+      email:    'git@gilles.cornu.name'

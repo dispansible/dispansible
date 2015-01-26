@@ -6,7 +6,7 @@ os:
 #python:   2.7
 
 install:
-  - .travis/install_$TRAVIS_OS_NAME.sh
+  - .travis/$TRAVIS_OS_NAME/install.sh
 
 script:
   - .travis/run.sh

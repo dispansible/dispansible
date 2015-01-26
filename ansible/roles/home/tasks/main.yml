@@ -1,6 +1,6 @@
-- name: compose user .bash_profile file
-  template: src=dot_bash_profile.j2
-            dest={{ ansible_env.HOME }}/.bash_profile
+- name: compose user .profile file
+  template: src=dot_profile.j2
+            dest={{ ansible_env.HOME }}/.profile
 
 - name: compose user .vimrc file
   template: src=dot_vimrc.j2

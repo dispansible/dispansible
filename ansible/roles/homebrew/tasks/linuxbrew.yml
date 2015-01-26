@@ -1,0 +1,8 @@
+---
+
+- name: install linuxbrew git repository
+  git:
+    repo: https://github.com/Homebrew/linuxbrew.git
+    dest: "{{ ansible_env.HOME }}/.linuxbrew"
+
+# TODO patch bashrc/zshrc/profile... done in home role for now
