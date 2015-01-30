@@ -26,6 +26,7 @@
 
 - name: Use Hombrew Cask only on MacOSX platform
   include: homebrew_cask.yml
+  tags: homebrew_cask
   when: ansible_distribution == 'MacOSX'
 
 - name: install requested homebrew packages

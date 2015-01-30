@@ -47,6 +47,7 @@ homebrew:
     - intellij-idea
     - lighttable
     - java
+    - java7
 
     # DevOps Tools:
     - packer

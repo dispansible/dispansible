@@ -5,6 +5,9 @@
 - name: install homebrew cask
   command: brew install caskroom/cask/brew-cask
 
+- name: add caskroom/versions tap
+  homebrew_tap: name=caskroom/versions
+
 - name: install requested casks
   homebrew_cask: name={{ item }}
   with_items: "{{ homebrew.casks|default([]) }}"
