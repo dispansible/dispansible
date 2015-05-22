@@ -1,0 +1,14 @@
+---
+
+- name: upgrade installed apt packages
+  apt:
+    upgrade: "{{ apt.upgrade_policy }}"
+  when: apt.upgrade_all
+
+- name: install apt packages
+  apt: 
+    name:             "{{ item }}"
+    state:            "{{ apt.install_policy }}"
+    update_cache:     "{{ apt.update_cache }}"
+    cache_valid_time: 900
+  with_items: "{{ apt.packages|default([]) }}"

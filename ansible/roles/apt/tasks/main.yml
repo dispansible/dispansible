@@ -1,0 +1,6 @@
+---
+
+- name: Install with APT only on Debian family
+  include: debian.yml
+  sudo_user: root
+  when: "ansible_os_family in ['Debian', 'Linuxmint']"

@@ -6,7 +6,7 @@
 
 - name: Include tasks for DEB installation
   include: debian.yml
-  when: ansible_os_family == 'Debian'
+  when: "ansible_os_family in ['Debian', 'Linuxmint']"
 
 # - name: Include tasks for RPM installation¬
 #   include: redhat.yml¬

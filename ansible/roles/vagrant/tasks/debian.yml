@@ -6,6 +6,5 @@
 
 - name: install vagrant .deb package
   apt: deb=/tmp/vagrant_{{ vagrant.version }}_{{ ansible_machine }}.deb
-  sudo: yes
   sudo_user: root
 
