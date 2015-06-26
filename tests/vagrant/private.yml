@@ -1,0 +1,6 @@
+---
+
+git:
+  user:
+    fullname: 'Gruffalo Bill'
+    email:    'gruffalo@vagrant.local'

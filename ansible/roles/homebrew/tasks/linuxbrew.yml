@@ -1,8 +1,37 @@
 ---
 
+  # FIXME: add linux cross-platformism (redhat family)
+
+- name: install linuxbrew dependencies for debian family
+  apt:
+    name: "{{ item }}"
+  sudo_user: root
+  when: "ansible_os_family in ['Debian', 'Linuxmint']"
+  with_items:
+    # official list of dependencies from 
+    # https://github.com/Homebrew/linuxbrew#debian-or-ubuntu
+    - build-essential
+    - curl
+    #- git
+    - m4 
+    #- ruby
+    - texinfo
+    - libbz2-dev
+    - libcurl4-openssl-dev
+    - libexpat-dev
+    - libncurses-dev
+    - zlib1g-dev
+
+    # work around to https://github.com/Homebrew/linuxbrew/issues/389
+    - unzip
+
+#- name: install linuxbrew dependencies for redhat family
+# sudo yum groupinstall 'Development Tools' && sudo yum install curl git irb m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel
+#  when: 
+
 - name: install linuxbrew git repository
   git:
     repo: https://github.com/Homebrew/linuxbrew.git
     dest: "{{ ansible_env.HOME }}/.linuxbrew"
 
-# TODO patch bashrc/zshrc/profile... done in home role for now
+# TODO patch bashrc/zshrc/profile... done in home role for now, but maybe better to apply this change via 'lineinfile'

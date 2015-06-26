@@ -1,10 +1,29 @@
 ---
 
+skipped_roles:
+  - homebrew  # FIXME
+
+apt:
+  upgrade_all:   no
+  packages:
+    # Base Tools
+    - zsh
+    - htop
+    - httpie
+
+    # Virtualization Tools
+    - libvirt-bin
+
 homebrew:
   upgrade_all:   no
 
   # see available packages at http://braumeister.org
   packages:
-    - leiningen
-    - maven
+    # Base Tools
     - peco
+
+    # Developer Tools
+    - nvm
+    - go        # deps from peco, note that GVM is missing from homebrew...
+    - leiningen # Java dependency is not checked
+    - mvnvm     # conflicts with maven

@@ -6,3 +6,7 @@ git:
     fullname: '{{ dispansible.private.user.fullname }}'
     email:    '{{ dispansible.private.user.email }}'
 
+vagrant:
+  plugins:
+    - vagrant-cachier
+

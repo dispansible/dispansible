@@ -1,17 +1,15 @@
-os:
-  - osx
-  - linux
+os:   [ linux, osx ]
+sudo: required
 
-#language: python
-#python:   2.7
-
+before_install: ./tests/travis/$TRAVIS_OS_NAME/clean.sh
 install:
-  - .travis/$TRAVIS_OS_NAME/install.sh
+  - ./tests/travis/$TRAVIS_OS_NAME/install.sh
+  - sudo pip install ansible-lint
 
 script:
-  - .travis/run.sh
-  - .travis/check.sh
+  - ./tests/travis/run.sh
+  - ./tests/travis/check.sh
 
 env:
   global:
-    - GALAXY=yes
+    - DISPANSIBLE_GALAXY=yes

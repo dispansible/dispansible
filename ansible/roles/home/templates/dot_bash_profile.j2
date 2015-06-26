@@ -1,0 +1,13 @@
+#
+# Load settings common to other SHELL environments
+#
+source $HOME/.profile
+
+{% if ansible_distribution == 'MacOSX' %}
+#
+# Enable Bash Completion
+#
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+{% endif %}

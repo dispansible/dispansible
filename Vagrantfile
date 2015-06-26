@@ -12,23 +12,20 @@ Vagrant.configure("2") do |config|
     machine.vm.box = 'ubuntu/trusty64'
 
     # Install ansible on the target VM
-    # TODO: could switch to scripts/bootstrap_ubuntu.sh
-    machine.vm.provision :shell, :inline => <<EOS
-set -e
-if ! command -V ansible-playbook >/dev/null 2>/dev/null; then
-  sudo apt-get update -qq
-  apt-get install -y -qq software-properties-common python-software-properties
-  add-apt-repository ppa:ansible/ansible -y
-  sudo apt-get update -qq
-  sudo apt-get install -qq ansible
-fi
-EOS
+    machine.vm.provision :shell, path: "./scripts/bootstrap_ubuntu.sh" do |s|
+      s.privileged = true
+    end 
 
+    # Execute dispansible from the target VM
+    # Note: for now, assume that ansible-galaxy was already executed locally (to be improved...)
     machine.vm.provision "shell" do |s|
-      dispansible_settings_home = '/vagrant/.travis/linux' # or "/vagrant/settings"
+      dispansible_settings_home = '/vagrant/tests/vagrant' # or "/vagrant/settings" when fully covered...
+      environment_vars = "DISPANSIBLE_SETTINGS_DIR=#{dispansible_settings_home}"
+      environment_vars += " DISPANSIBLE_GALAXY=no"
+      environment_vars += " PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true"
       s.privileged = false
-      s.inline = "cd /vagrant && DISPANSIBLE_SETTINGS_DIR=#{dispansible_settings_home} PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true GALAXY=no ./dispansible $1"
-      #s.args = "clojure_tools"
+      s.inline = "cd /vagrant && DISPANSIBLE_SETTINGS_DIR=#{dispansible_settings_home} PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true DISPANSIBLE_GALAXY=no ./dispansible $1"
+      s.args = "all"
     end
   end
 

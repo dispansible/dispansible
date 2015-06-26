@@ -1,0 +1,33 @@
+---
+
+skipped_roles:
+#  - homebrew # FIXME
+  - sublimetext  # not implemented yet
+
+homebrew:
+  packages:
+    - pkg-config # required to install weechat with additional options, e.g. python support
+    # FIXME: had to brew link pkg-config so that weechat could be installed/built (error is clear...but)
+    - tree
+    - { name: htop } # requires libncursesw5-dev apt package...
+    # FIXME: test below disabled because it fails on finding a zlib Formulae requirement 
+    #- { name: weechat, install_options: 'with-python,with-ruby' }
+
+rvm:
+  rubies:
+    - 1.9.3
+    # Workaround to ruby-1.9.3 -> symlink missing, and gem not found
+    # see https://github.com/rvm/rvm1-ansible/pull/41
+    # IMPORTANT: add ruby- prefix as well!
+#    - ruby-1.9.3-p551
+    - 2.0.0
+#    - ruby-2.0.0-p643
+    - 2.1
+    - 2.2
+#    - ruby-2.1.5
+#    - ruby
+#    - rbx
+#    disabled due to LLVM-config issue
+#    SEE https://github.com/postmodern/ruby-install/issues/184
+#    - rbx-2.4.1
+#    - jruby-1.7

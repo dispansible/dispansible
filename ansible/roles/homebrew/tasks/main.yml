@@ -11,17 +11,17 @@
 # TODO fail/finish if brew is not installed/supported at this point
 
 - name: tap very common external homebrew repositories
-  homebrew_tap: tap={{ item }}
+  disp_homebrew_tap: tap={{ item }}
   with_items:
     - homebrew/versions
     - homebrew/completions
 
 - name: tap more external homebrew repositories
-  homebrew_tap: tap={{ item }}
+  disp_homebrew_tap: tap={{ item }}
   with_items: "{{ homebrew.taps|default([]) }}"
 
 - name: update homebrew formulaes and upgrade already installed software
-  homebrew: update_homebrew=yes upgrade_all=yes
+  disp_homebrew: update_homebrew=yes upgrade_all=yes
   when: homebrew.upgrade_all
 
 - name: Use Hombrew Cask only on MacOSX platform
@@ -30,5 +30,7 @@
   when: ansible_distribution == 'MacOSX'
 
 - name: install requested homebrew packages
-  homebrew: name={{ item }}
+  disp_homebrew:
+    name: "{{ item.name|default(item) }}"
+    install_options: "{{ item.install_options|default([]) }}"
   with_items: "{{ homebrew.packages|default([]) }}"

@@ -15,8 +15,8 @@ if [ "$OS_FAMILY" == "Darwin" ]; then
   OS=macosx
 fi
 
-if [ -z "$GALAXY" ]; then
-  GALAXY=yes
+if [ -z "$DISPANSIBLE_GALAXY" ]; then
+  DISPANSIBLE_GALAXY=no
 fi
 GALAXY_ROLES_PATH=$ANSIBLE_HOME/galaxy
 GALAXY_FILE=$ANSIBLE_HOME/galaxy.yml
@@ -28,7 +28,7 @@ fi
 
 ###   Ansible Galaxy   ###
 
-if [ "$GALAXY" == "yes" ]; then
+if [ "$DISPANSIBLE_GALAXY" == "yes" ]; then
   if [ "GALAXY_FORCE" != "--force" ]; then
     rm -rf $GALAXY_ROLES_PATH
   fi

@@ -16,7 +16,7 @@ if [ "$OS_FAMILY" == "Darwin" ]; then
   fi
 else
   echo "check virtualbox version:"
-  EXPECTED_VBOX_VERSION="4.3.20r96996"
+  EXPECTED_VBOX_VERSION="4.3.28r100309"
   POSITIVE_CHECK=$(VBoxManage --version)
   OBSERVED_VBOX_VERSION=${POSITIVE_CHECK: -12}
   if [ "$OBSERVED_VBOX_VERSION" != "$EXPECTED_VBOX_VERSION" ]; then

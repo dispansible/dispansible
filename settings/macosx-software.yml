@@ -11,24 +11,37 @@ homebrew:
     - dos2unix
     - gpg
     - gnu-sed
+    - htop-osx
+    - openssh  # via homebrew/dupes
     - peco
+    - p7zip
     - stow
     - tree
     - vim
+    - zsh
     - zsh-completions
 
     # Network Tools
     - curl
+    - httpie
     - nmap
     - wget
+    - wrk
     - youtube-dl
+    - { name: weechat, install_options: 'with-python,with-ruby' }
 
     # Developer Tools:
+    - boot2docker
+    - docker
+    - deis
     - leiningen
     - liquibase
     - llvm
-    - maven
+    - mvnvm       # attention: conflicts with maven
+    - nvm
     - subversion
+    - springboot
+    - xhyve
 
   # see available casks at http://caskroom.io
   casks:
@@ -43,18 +56,33 @@ homebrew:
     - libreoffice
 
     # Developer Tools:
+    - atom
+    - rowanj-gitx
     - sourcetree
     - intellij-idea
     - lighttable
     - java
     - java7
+    - mysqlworkbench
+    - pgadmin3
 
     # DevOps Tools:
+    - chefdk
     - packer
+    - terraform
+    - kitematic
 
     # Communication
     - colloquy
+    - skype
+    - slack
 
     # Multimedia
+    - adobe-digital-editions
     - spotify
     - vlc
+    - burn
+
+    # networking
+    - transmission
+
