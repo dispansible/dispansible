@@ -4,7 +4,35 @@
 # Ansible Roles maintained by own Software "Vendor"
 #
 - src: rvm_io.rvm1-ruby
+  name: rvm
+  # TODO: pin the version
 
 #
-# ... more stuff coming ...
+# Ansible Roles maintained by the Software "Community"
+#
+#- src: angstwad.docker_ubuntu
+#  name: docker_ubuntu
+
+- src:     https://github.com/nodesource/ansible-nodejs-role
+  version: 3e96aae57b0be706df33fda8f5ddb255346de4f1
+  name:    nodejs_ubuntu
+
+- src:     https://github.com/alv-ch-ansible-roles/oracle-jdk
+  version: origin/alvch-additions
+  name:    oracle_jdk_ubuntu
+
+#
+# Ansible Roles forked and maintained by the Dispansible Project
+#
+
+- src:     https://github.com/dispansible/docker_ubuntu-ansible-role
+  version: origin/dispansible-integration
+  name:    docker_ubuntu
+
+- src:     https://github.com/dispansible/spotify_ubuntu-ansible-role
+  version: origin/dispansible-integration
+  name:    spotify_ubuntu
+
+#
+# Ansible Roles built and maintained by the Dispansible Project
 #

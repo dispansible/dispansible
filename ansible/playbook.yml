@@ -16,7 +16,7 @@
   roles:
 
 ################################################¬
-# Package Managers
+# First Things...
 ################################################¬
 
   - {
@@ -30,6 +30,10 @@
       tags: git,
       when: "'git' not in skipped_roles"
     }
+
+################################################¬
+# Package Managers
+################################################¬
 
   - {
       role: apt,
@@ -63,6 +67,17 @@
 ################################################
 
   - {
+      role: oracle_jdk_ubuntu,
+      sudo_user: root,
+      oracle_jdk_switcher_enabled:      yes,
+      oracle_jdk_switcher_version:      'e501c74033e475a0b6938987d912cf0c4b0baa06',
+      oracle_jdk_java_versions:         [7, 8],
+      oracle_jdk_java_version_default:  8,
+      tags: oracle_jdk,
+      when: "'oracle_jdk' not in skipped_roles and ansible_system == 'Linux'" # FIXME improve cross-platformism (Rehat family, etc.)
+    }
+
+  - {
       role: clojure_tools,
       tags: clojure_tools,
       when: "'clojure_tools' not in skipped_roles"
@@ -71,7 +86,7 @@
   # By default this role makes a system-wide setup,
   # but here we want a user setup.
   - {
-      role: 'rvm_io.rvm1-ruby',
+      role: 'rvm',
       rvm1_user: '{{ ansible_env.USER }}',
       rvm1_install_path: '{{ ansible_env.HOME }}/.rvm',
       rvm1_install_flags: '--auto-dotfiles --autolibs=enable --user-install',
@@ -106,10 +121,29 @@
       when: "'virtualbox' not in skipped_roles"
     }
 
+  - { # FIXME: encapsulate in a platform-agnostic role to address Mac,Redhat-family,...
+      role: docker_ubuntu,
+      tags: docker,
+      sudo_user: root,
+      docker_group_members: [ '{{ ansible_env.USER }}' ],
+      when: "'docker' not in skipped_roles and ansible_os_family in ['Debian', 'Linuxmint']"
+    }
+
   - {
       role: vagrant,
       tags: vagrant,
       when: "'vagrant' not in skipped_roles"
+    }
+
+################################################¬
+# "Optional" stuff (!)
+################################################¬
+
+  - {
+      role: spotify_ubuntu,
+      tags: spotify,
+      sudo_user: root,
+      when: "'spotify' not in skipped_roles and ansible_system == 'Linux'" # FIXME improve cross-platformism (Rehat family, etc.)
     }
 
 ################################################¬
