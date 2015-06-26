@@ -61,6 +61,11 @@
 # Base Tools
 ################################################
 
+  - {
+      role: ohmyzsh,
+      tags: ohmyzsh,
+      when: "'ohmyzsh' not in skipped_roles"
+    }
 
 ################################################
 # Programming Language Tools

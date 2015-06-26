@@ -1,0 +1,12 @@
+#FIXME: ensure that zsh prererquisite is available/installed (package...)
+
+- name: install git repository
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: "{{ ohmyzsh.setup_dir }}"
+    update: no
+
+- name: compose user .zshrc file
+  template: src=dot_zshrc.j2
+            dest={{ ansible_env.HOME }}/.zshrc
+

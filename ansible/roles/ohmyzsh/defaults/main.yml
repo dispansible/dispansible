@@ -1,0 +1,5 @@
+---
+
+ohmyzsh:
+  setup_dir: "{{ ansible_env.HOME }}/.oh-my-zsh"
+  theme: "pygmalion" #robbyrussell, random,...
