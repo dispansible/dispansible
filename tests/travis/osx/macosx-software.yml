@@ -1,8 +1,9 @@
 ---
 
 skipped_roles: 
-  - virtualbox # TODO to be enabled
-  - rvm        # TODO to be enabled
+  - virtualbox  # TODO to be enabled
+  - rvm         # TODO to be enabled
+  - sublimetext # TODO to be enabled (fix plugin setup, when app never has been started)
 
 homebrew:
   upgrade_all: no
