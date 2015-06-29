@@ -20,6 +20,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 
+# Copied from https://github.com/ansible/ansible-modules-core/pull/190
 
 DOCUMENTATION = '''
 ---
@@ -64,7 +65,7 @@ options:
         default: 'yes'
         choices: ['yes', 'no']
     base_codename:
-        version_added: '1.8'
+        version_added: '1.999'
         description:
             - The codename of the Ubuntu version used as base for the target distro (e.g. precise, trusty)
               Only needed when adding a PPA for Ubuntu-based distributions.
