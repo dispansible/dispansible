@@ -1,15 +1,20 @@
 ---
 
 skipped_roles:
-#  - homebrew # FIXME
+  - homebrew # FIXME
   - sublimetext  # not implemented yet
+
+apt:
+  force: yes
+  packages:
+    - zsh
 
 homebrew:
   packages:
     - pkg-config # required to install weechat with additional options, e.g. python support
     # FIXME: had to brew link pkg-config so that weechat could be installed/built (error is clear...but)
     - tree
-    - { name: htop } # requires libncursesw5-dev apt package...
+    # - { name: htop } # FIXME: requires libncursesw5-dev apt package...
     # FIXME: test below disabled because it fails on finding a zlib Formulae requirement 
     #- { name: weechat, install_options: 'with-python,with-ruby' }
 

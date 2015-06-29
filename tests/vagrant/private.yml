@@ -1,6 +1,8 @@
 ---
 
-git:
-  user:
-    fullname: 'Gruffalo Bill'
-    email:    'gruffalo@vagrant.local'
+dispansible:
+  private:
+    user:
+      fullname: 'Gruffalo Bill'
+      email:    'gruffalo@vagrant.local'
+

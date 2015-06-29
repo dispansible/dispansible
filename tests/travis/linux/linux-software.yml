@@ -1,7 +1,7 @@
 ---
 
 skipped_roles:
-#  - homebrew     # FIXME
+  - homebrew     # FIXME
   - openzfs      # disabled until we fix the held broken packages on apt-get install.
   - sublimetext  # not implemented yet
 

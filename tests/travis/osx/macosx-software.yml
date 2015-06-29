@@ -2,7 +2,7 @@
 
 skipped_roles: 
   - virtualbox # TODO to be enabled
-  # - rvm        # TODO to be enabled
+  - rvm        # TODO to be enabled
 
 homebrew:
   upgrade_all: no
