@@ -21,7 +21,7 @@
 #   - https://github.com/ansible/ansible/issues/1904
 #   - https://github.com/ansible/ansible-modules-core/pull/513
 - name: install vagrant plugins
-  command: vagrant plugin install {{ item }} creates={{ ansible_env.HOME }}/.vagrant.d/gems/gems/{{ item }}*
+  disp_command: vagrant plugin install {{ item }} creates={{ ansible_env.HOME }}/.vagrant.d/gems/gems/{{ item }}*
   with_items: vagrant.plugins
 
 - name: compose a global Vagrantfile
