@@ -1,11 +1,12 @@
 ---
 
-  # FIXME: base_condename won't work on linux mint. 
+  # TODO switch to NodeSource repo, or even https://github.com/nodesource/ansible-nodejs-role
+  # see also https://github.com/nodesource/distributions for removal of chris-lea PPA...
 - name: install chris-lea node.js ppa repository
-  apt_repository:
-    repo: ppa:chris-lea/node.js
-    base_codename: '{{ ansible_distribution_release }}'
-    update_cache: yes
+  disp_apt_repository:
+    repo:           ppa:chris-lea/node.js
+    base_codename:  '{{ ansible_lsb_base_codename | default(ansible_lsb.codename) }}'
+    update_cache:   yes
 
 - name: install nodejs from chris-lea ppa repository
   apt: name=nodejs update_cache=yes
