@@ -17,8 +17,8 @@ homebrew:
 rvm:
   rubies:
     - ruby-1.9.3
-    - 2.1
+#    - 2.1
     - ruby
     - rbx
-    - jruby
+#    - jruby
 
