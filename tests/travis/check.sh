@@ -18,7 +18,7 @@ else
   echo "check virtualbox version:"
   EXPECTED_VBOX_VERSION="4.3.28r100309"
   POSITIVE_CHECK=$(VBoxManage --version)
-  OBSERVED_VBOX_VERSION=${POSITIVE_CHECK: -12}
+  OBSERVED_VBOX_VERSION=${POSITIVE_CHECK: -13}
   if [ "$OBSERVED_VBOX_VERSION" != "$EXPECTED_VBOX_VERSION" ]; then
     echo "virtualbox is not installed as expected. Version found: $OBSERVED_VBOX_VERSION instead of $EXPECTED_VBOX_VERSION!"
     exit 2
