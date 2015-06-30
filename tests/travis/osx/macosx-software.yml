@@ -2,7 +2,6 @@
 
 skipped_roles: 
   - virtualbox  # TODO to be enabled
-  - rvm         # TODO to be enabled
   - sublimetext # TODO to be enabled (fix plugin setup, when app never has been started)
 
 homebrew:
@@ -18,5 +17,5 @@ rvm:
   rubies:
     - ruby-1.9.3
     - ruby
-    - rbx
-    - jruby
+#    - rbx
+#    - jruby

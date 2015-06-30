@@ -1,7 +1,6 @@
 ---
 
 skipped_roles:
-  - homebrew     # FIXME
   - openzfs      # disabled until we fix the held broken packages on apt-get install.
   - sublimetext  # not implemented yet
 
@@ -17,6 +16,8 @@ homebrew:
 rvm:
   rubies:
     - ruby-1.9.3
+    - 2.1
     - ruby
     - rbx
     - jruby
+

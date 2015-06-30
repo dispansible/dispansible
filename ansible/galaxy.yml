@@ -3,9 +3,9 @@
 #
 # Ansible Roles maintained by own Software "Vendor"
 #
-- src: rvm_io.rvm1-ruby
-  name: rvm
-  # TODO: pin the version
+#- src: rvm_io.rvm1-ruby
+#  name: rvm
+#  #TODO: pin the version
 
 #
 # Ansible Roles maintained by the Software "Community"
@@ -24,6 +24,10 @@
 #
 # Ansible Roles forked and maintained by the Dispansible Project
 #
+
+- src:     https://github.com/dispansible/rvm1-ansible-role
+  version: origin/dispansible-integration
+  name:    rvm
 
 - src:     https://github.com/dispansible/docker_ubuntu-ansible-role
   version: origin/dispansible-integration
