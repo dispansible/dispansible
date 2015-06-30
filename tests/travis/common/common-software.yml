@@ -1,7 +1,7 @@
 ---
 
 git:
-  force:      no
+  force:      yes
   user:
     fullname: '{{ dispansible.private.user.fullname }}'
     email:    '{{ dispansible.private.user.email }}'
