@@ -9,13 +9,16 @@ homebrew:
     - bash-completion
     - coreutils
     - dos2unix
+    - freetype
     - gpg
     - gnu-sed
     - htop-osx
+    - jq
     - openssh  # via homebrew/dupes
     - peco
     - p7zip
     - stow
+    - tmux
     - tree
     - vim
     - zsh
@@ -31,9 +34,8 @@ homebrew:
     - { name: weechat, install_options: 'with-python,with-ruby' }
 
     # Developer Tools:
-    - boot2docker
-    - docker
     - deis
+    - groovy
     - leiningen
     - liquibase
     - llvm
@@ -41,6 +43,7 @@ homebrew:
     - nvm
     - subversion
     - springboot
+    - sqitch_pg
     - xhyve
 
   # see available casks at http://caskroom.io
@@ -61,6 +64,7 @@ homebrew:
     - sourcetree
     - intellij-idea
     - lighttable
+    - sublime-text3 # or sublime-text (for version 2)
     - java
     - java7
     - mysqlworkbench
@@ -70,12 +74,16 @@ homebrew:
     - chefdk
     - packer
     - terraform
-    - kitematic
+    - dockertoolbox
 
     # Communication
     - colloquy
     - skype
     - slack
+
+    # 3D Drawing & Printing
+    - cura
+    - makerbot-desktop
 
     # Multimedia
     - adobe-digital-editions
@@ -86,3 +94,6 @@ homebrew:
     # networking
     - transmission
 
+    # hardware controlling
+    - drobo-dashboard
+    - tuxera-ntfs
