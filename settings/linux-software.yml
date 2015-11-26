@@ -13,6 +13,9 @@ apt:
 
     # Virtualization Tools
     - libvirt-bin
+    - libvirt-dev
+    - qemu-kvm
+    - qemu-utils
 
 homebrew:
   upgrade_all:   no

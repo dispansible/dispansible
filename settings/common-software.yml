@@ -56,13 +56,19 @@ rvm:
     # - jruby (disabled until maven setup is organized for linux platform)
 
 vagrant:
-  version: 1.7.2
+  version: 1.7.4
   plugins:
     - vagrant-cachier
     - vagrant-digitalocean
+    - vagrant-guestip
     - vagrant-hostmanager
-    - vagrant-vbguest
+    - vagrant-hostsupdater
+    - vagrant-kvm         # only on linux
+    - vagrant-libvirt     # only on linux
+    - vagrant-mutate      # only on linux
+    - vagrant-rackspace
     - vagrant-triggers
+    - vagrant-vbguest
 
 virtualbox:
   # FIXME: this is the mac installer, not linux!
