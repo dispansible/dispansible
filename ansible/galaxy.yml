@@ -10,8 +10,8 @@
 #
 # Ansible Roles maintained by the Software "Community"
 #
-#- src: angstwad.docker_ubuntu
-#  name: docker_ubuntu
+- src: angstwad.docker_ubuntu
+  name: docker_ubuntu
 
 - src:     https://github.com/nodesource/ansible-nodejs-role
   version: 3e96aae57b0be706df33fda8f5ddb255346de4f1
@@ -28,10 +28,6 @@
 - src:     https://github.com/dispansible/rvm1-ansible-role
   version: origin/dispansible-integration
   name:    rvm
-
-- src:     https://github.com/dispansible/docker_ubuntu-ansible-role
-  version: origin/dispansible-integration
-  name:    docker_ubuntu
 
 - src:     https://github.com/dispansible/spotify_ubuntu-ansible-role
   version: origin/dispansible-integration
