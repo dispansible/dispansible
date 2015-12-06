@@ -34,14 +34,19 @@ homebrew:
     - { name: weechat, install_options: 'with-python,with-ruby' }
 
     # Developer Tools:
+    - boot-clj
     - deis
     - groovy
+    - jenv
     - leiningen
     - liquibase
-    - llvm
+    - { name: llvm, install_options: 'with-clang,with-asan' }
+    - multirust
     - mvnvm       # attention: conflicts with maven
     - nvm
+    - rustc-completion
     - subversion
+    - skinny
     - springboot
     - sqitch_pg
     - xhyve
@@ -69,6 +74,9 @@ homebrew:
     - java7
     - mysqlworkbench
     - pgadmin3
+
+    # Virtualization
+    - vmware-fusion
 
     # DevOps Tools:
     - chefdk

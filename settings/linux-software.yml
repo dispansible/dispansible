@@ -10,12 +10,20 @@ apt:
     - zsh
     - htop
     - httpie
+    - tree
+    - keepassx
+
+    # Dev Tools 
+    - pgadmin3
 
     # Virtualization Tools
     - libvirt-bin
     - libvirt-dev
     - qemu-kvm
     - qemu-utils
+
+    # Web
+    - chromium-browser
 
 homebrew:
   upgrade_all:   no
@@ -30,3 +38,7 @@ homebrew:
     - go        # deps from peco, note that GVM is missing from homebrew...
     - leiningen # Java dependency is not checked
     - mvnvm     # conflicts with maven
+    # Others
+    - youtube-dl
+    - ffmpeg # recommended by youtube-dl for post-processing options
+    - libav  # recommended by youtube-dl for post-processing options
