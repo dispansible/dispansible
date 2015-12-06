@@ -1,14 +1,16 @@
 ---
 
 - name: add the oracle virtualbox apt key
-  apt_key: url=https://www.virtualbox.org/download/oracle_vbox.asc
+  apt_key:
+    url: https://www.virtualbox.org/download/oracle_vbox.asc
 
-  #FIXME: it won't work on LinuxMint..., see openzfs, etc.
 - name: add the oracle virtualbox apt repository
-  apt_repository: repo="deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib"
+  apt_repository:
+    repo: "deb http://download.virtualbox.org/virtualbox/debian {{ ansible_base_codename | default(ansible_lsb.codename) }} contrib"
+    update_cache: yes
 
   #FIXME: add virtualbox.version (or something similar), but the problem
   #       is that macosx and linux don't use same version information...
 - name: install oracle virtualbox via apt
-  apt: pkg=virtualbox-4.3
-  #apt: pkg=virtualbox-{{ virtualbox.version }}
+  apt:
+    pkg: "virtualbox-4.3" # major_version -> 4.2, 4.3, 5.0
