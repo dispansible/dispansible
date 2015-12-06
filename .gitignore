@@ -1,6 +1,8 @@
 *.bak
 
 .vagrant*
+
 /ansible/npm-debug.log
 /ansible/galaxy
+/tmp
 
