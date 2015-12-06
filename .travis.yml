@@ -10,6 +10,7 @@ install:
   - sudo pip install ansible-lint
 
 script:
+  - env
   - ./tests/travis/run.sh
   - ./tests/travis/check.sh
 
