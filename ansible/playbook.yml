@@ -7,6 +7,10 @@
   sudo_user: '{{ ansible_ssh_user }}'
 
   pre_tasks:
+
+    - debug: msg="{{ ansible_ssh_user }}"
+    - debug: msg="{{ ansible_env }}"
+
     # FIXME this check only works when no ansible tags are used!
     #       another approach will consists in adding similar checker for each software role
     - name: Check for unsupported platform
