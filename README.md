@@ -90,4 +90,6 @@ Install specific software:
 * [Boxen](https://boxen.github.com/) (based on [Puppet](http://puppetlabs.com/))
 * [Kitchenplan](http://kitchenplan.github.io/kitchenplan/) (based on [Chef](https://www.chef.io/))
 * [battleschool](https://github.com/spencergibb/battleschool) (also based on Ansible and mainly focused on Mac support)
+* [OSXC](https://github.com/osxc) is a configuration tool for Mac OS X, also based on Ansible
+* [The Munki Project](https://www.munki.org/) is home to several projects that are focused on improving the experience of managing OS X for both the admin and the end user.
 
