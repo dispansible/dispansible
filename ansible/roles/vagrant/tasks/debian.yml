@@ -1,7 +1,7 @@
 ---
 
 - name: download vagrant .deb package
-  get_url: url={{ vagrant.download_base_url }}/vagrant_{{ vagrant.version }}_{{ ansible_machine }}.deb
+  get_url: url={{ vagrant.download_base_url }}/{{ vagrant.version }}/vagrant_{{ vagrant.version }}_{{ ansible_machine }}.deb
            dest=/tmp/vagrant_{{ vagrant.version }}_{{ ansible_machine }}.deb
 
 - name: install vagrant .deb package
