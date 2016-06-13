@@ -5,6 +5,8 @@
 vagrant:
   #FIXME the version option is only considered in Linux environment.
   #      on mac, homebrew only can provide the "latest" version. 
-  version: 1.8.3
+  version: 1.8.4
+  checksum: 'sha256:fd38d8e00e494a617201facb42fc2cac627e5021db15e91c2a041eac6a2d8208'
+  #checksum: 'sha256:555351717cacaa8660821df8988cc40a39923b06b698fca6bb90621008aab06f'
   plugins:
     - vagrant-cachier
