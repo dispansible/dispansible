@@ -3,8 +3,12 @@
     - mac_box
     - linux_box
 
-  sudo: yes
-  sudo_user: '{{ ansible_ssh_user }}'
+  gather_facts: yes
+
+  become: yes
+#  become_user: '{{ ansible_ssh_user }}'
+#  become_user: '{{ansible_env.USER}}'
+#  become_user: vagrant
 
   pre_tasks:
     # FIXME this check only works when no ansible tags are used!

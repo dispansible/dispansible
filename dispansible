@@ -44,6 +44,7 @@ ansible-playbook\
  --extra-vars="@${DISPANSIBLE_SETTINGS_DIR}/private.yml"\
  --extra-vars="@${DISPANSIBLE_SETTINGS_DIR}/${OS}-software.yml"\
  --extra-vars="@${DISPANSIBLE_SETTINGS_DIR}/common-software.yml"\
+ --extra-vars=ansible_ssh_user=$USER \
  --inventory-file=inventories/$OS\
  --tags=$TAGS\
  playbook.yml
