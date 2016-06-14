@@ -1,6 +1,8 @@
 os:   [ linux, osx ]
 sudo: required
 
+language: generic
+
 before_install: ./tests/travis/$TRAVIS_OS_NAME/clean.sh
 install:
   - ./tests/travis/$TRAVIS_OS_NAME/install.sh
