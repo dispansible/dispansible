@@ -4,7 +4,8 @@ dist: trusty
 
 language: generic
 
-before_install: ./tests/travis/$TRAVIS_OS_NAME/clean.sh
+# before_install: ./tests/travis/$TRAVIS_OS_NAME/clean.sh
+
 install:
   - ./tests/travis/$TRAVIS_OS_NAME/install.sh
   - sudo pip install ansible-lint
