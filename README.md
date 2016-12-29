@@ -4,6 +4,22 @@ Setup all the things on your workstation with Ansible.
 
 **Warning:** this project is currently in *alpha* state.
 
+## "Supported" Platforms
+
+The targeted Operating Systems are currently:
+
+* **Debian / Ubuntu / Linux Mint** Linux distributions (mainly based on apt/ppa packaging, but also on [Linuxbrew](http://linuxbrew.sh/). Currently focused on Ubuntu 14.04 generation.
+* **Mac OS X 10.10+** (mainly based on [Homebrew](http://brew.sh/) and [Homebrew Cask](https://caskroom.github.io/) packages)
+
+### Possible Future Targets
+
+Pending on dispansible community size and interests
+
+* [Arch Linux](https://www.archlinux.org/)
+* [Korora Linux](https://kororaproject.org/) _a nice looking Fedora-based distribution_ with goals similar to Linux Mint.
+* [Redox OS](http://www.redox-os.org/) _a Unix-like Operating System written in Rust_
+* Open/Free/Net BSD
+
 ## Credits
 
 This project initially began as a fork of https://github.com/spencergibb/ansible-osx, but my approach rapidly diverged from [battleschool](https://github.com/spencergibb/battleschool) design. During this alpha/beta development phase, I don't aim at keeping this project merge-compatible with `battleschool`, but I'm keeping this topic in mind, and would love to discuss it further.
