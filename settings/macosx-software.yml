@@ -5,18 +5,22 @@ homebrew:
   # see available packages at http://braumeister.org
   packages:
     # Base Tools:
+    - ack
     - bash
     - bash-completion
     - coreutils
     - dos2unix
     - freetype
     - gpg
+    - gpg-agent
+    - pinentry-mac # required by gpg-agent on macosx
     - gnu-sed
     - htop-osx
     - jq
     - openssh  # via homebrew/dupes
     - peco
     - p7zip
+    - smartmontools
     - stow
     - tmux
     - tree
@@ -24,37 +28,61 @@ homebrew:
     - zsh
     - zsh-completions
 
+    # Cloud and Server Tools
+    - awscli
+    - tarsnap
+
     # Network Tools
     - curl
     - httpie
     - nmap
+    - tcpkali
     - wget
     - wrk
-    - youtube-dl
     - { name: weechat, install_options: 'with-python,with-ruby' }
 
     # Developer Tools:
+    - ansible-cmdb
     - boot-clj
-    - deis
+#    - cabal-install
+    - Caskroom/versions/dbeaver-community
+#    - deis
+    - emscripten
+    - gitup
+    - gradle
     - groovy
+    - habitat
     - jenv
     - leiningen
     - liquibase
     - { name: llvm, install_options: 'with-clang,with-asan' }
-    - multirust
     - mvnvm       # attention: conflicts with maven
     - nvm
+    - packer
+    - postgrest
+# TODO: replace with rustup (not supported yet in homebrew)
+#    - rust
     - rustc-completion
     - subversion
     - skinny
     - springboot
     - sqitch_pg
+    - terraform
+    - tig
+    - swagger-codegen
     - xhyve
+
+    # video-tools
+    - ffmpeg
+    - youtube-dl
 
   # see available casks at http://caskroom.io
   casks:
     # Security
     - keepassx
+    - gpgtools
+    - avira-antivirus
+    - diskmaker-x
 
     # Web Tools:
     - firefox
@@ -64,30 +92,38 @@ homebrew:
     - libreoffice
 
     # Developer Tools:
-    - atom
+    - clion
+    - datagrip
     - rowanj-gitx
     - sourcetree
     - intellij-idea
-    - lighttable
+    - hopper-disassembler
+    - soapui
     - sublime-text3 # or sublime-text (for version 2)
     - java
     - java7
+    - kitematic
     - mysqlworkbench
     - pgadmin3
 
     # Virtualization
     - vmware-fusion
+    - parallels-desktop
+    - parallels-virtualization-sdk # required to build base base boxes with packer
 
-    # DevOps Tools:
+    # DevOps Tools
     - chefdk
-    - packer
-    - terraform
-    - dockertoolbox
+    - habitat
 
     # Communication
     - colloquy
+    - gitter
+    - mailpile
+    - nylas-n1
     - skype
     - slack
+    - telegram
+    - whatsapp
 
     # 3D Drawing & Printing
     - cura
@@ -95,7 +131,14 @@ homebrew:
 
     # Multimedia
     - adobe-digital-editions
+    - ffmpegx
+    - handbrake
+    - handbrakebatch
+    - ripit
+    - sonic-pi
     - spotify
+    - skitch
+    - silverlight
     - vlc
     - burn
 

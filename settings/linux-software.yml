@@ -7,11 +7,12 @@ apt:
   upgrade_all:   no
   packages:
     # Base Tools
-    - zsh
+    - ack-grep
     - htop
-    - httpie
-    - tree
+    # - httpie  # See alternative setup via Linuxbrew...
     - keepassx
+    - tree
+    - zsh
 
     # Dev Tools 
     - pgadmin3
@@ -34,10 +35,12 @@ homebrew:
     - peco
 
     # Developer Tools
-    - nvm
-    - go        # deps from peco, note that GVM is missing from homebrew...
-    - leiningen # Java dependency is not checked
+    - httpie    # TRY to conflict with apt
     - mvnvm     # conflicts with maven
+    - nvm
+    - postgrest # NOT TRIED on Linux YET
+    - wrk
+
     # Others
     - youtube-dl
     - ffmpeg # recommended by youtube-dl for post-processing options

@@ -13,4 +13,4 @@
   #       is that macosx and linux don't use same version information...
 - name: install oracle virtualbox via apt
   apt:
-    pkg: "virtualbox-4.3" # major_version -> 4.2, 4.3, 5.0
+    pkg: "virtualbox-5.1" # major_version -> 4.2, 4.3, 5.0, 5.1

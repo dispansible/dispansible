@@ -48,27 +48,30 @@ sublimetext:
 rvm:
   rubies:
     - ruby-1.9.3
-    - ruby-2.0
-    - ruby-2.1
     - ruby-2.2
-    - ruby-2.2.2
+    - ruby-2.3
+    - ruby-2.4
     # - rbx (disabled until missing llvm-config is solved on mac platform)
     # - jruby (disabled until maven setup is organized for linux platform)
 
 vagrant:
-  version: 1.7.4
   plugins:
     - vagrant-cachier
+    - vagrant-aws
     - vagrant-digitalocean
     - vagrant-guestip
     - vagrant-hostmanager
     - vagrant-hostsupdater
-    - vagrant-kvm         # only on linux
-    - vagrant-libvirt     # only on linux
-    - vagrant-mutate      # only on linux
+#    - vagrant-kvm         # only on linux
+#    - vagrant-libvirt     # only on linux
+#    - vagrant-mutate      # only on linux
     - vagrant-rackspace
     - vagrant-triggers
     - vagrant-vbguest
+    - vagrant-vmware-fusion # only on macosx
+    - vagrant-parallels     # only on macosx
+    - vagrant-veertu        # only on macosx
+    - vagrant-alpine
 
 virtualbox:
   # FIXME: this is the mac installer, not linux!
